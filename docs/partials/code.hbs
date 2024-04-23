@@ -1,7 +1,0 @@
-<div class="docs-Code js-DocsCode">
-  {{#if title}}<div class="docs-Code-title">{{title}}</div>{{/if}}
-  {{#if url}}<div class="docs-Code-example">{{rawgit url}}</div>{{/if}}
-  <div class="docs-Code-highlight">
-    <pre><code {{#if lang}}class="lang-{{lang}}"{{/if}}>{{{rawgit url true}}}{{> @partial-block }}</code></pre>
-  </div>
-</div>
