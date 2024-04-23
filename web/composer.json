@@ -1,6 +1,6 @@
 {
   "name": "{{author}}/{{name}}",
-  "description": "WordPress development environment for {{human-name}}",
+  "description": "Local WordPress development environment for {{human-name}}",
   "type": "project",
   "license": "MIT",
   "homepage": "{{production-url}}",
@@ -18,51 +18,47 @@
       "type": "package",
       "package": {
         "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.9.4",
+        "version": "6.2.9",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
           "url": "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&a=download&k{{acf-key}}"
         }
       }
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "wpml/sitepress-multilingual-cms",
-        "version": "4.1.14",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url":
-            "https://wpml.org/?download=6088&user_id{{wpml-user-id}}&subscription_key{{wpml-key}}"
-        }
-      }
     }
   ],
   "require": {
-    "php": ">=7.0",
-    "johnpbloch/wordpress": "^5",
-    "wpackagist-plugin/contact-form-7": "^5",
-    "wpackagist-plugin/flamingo": "^2",
-    "wpackagist-plugin/duplicate-post": "^4",
-    "wpackagist-plugin/wordpress-seo": "^15",
-    "wpackagist-plugin/simple-history": "^2",
-    "wpackagist-plugin/no-category-base-wpml": "^1",
-    "wpackagist-plugin/redirection": "^5",
-    "wpackagist-plugin/imagify": "^1",
-    "wpackagist-plugin/autoptimize": "^2",
-    "wpackagist-plugin/simple-custom-post-order": "^2",
-    "wpackagist-plugin/wp-mail-smtp": "^2",
-    "wpackagist-plugin/breadcrumb-navxt": "^6",
+    "php": ">=8.1",
+    "johnpbloch/wordpress": "^6",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
-    "wpml/sitepress-multilingual-cms": "*"
+    "roots/bedrock-autoloader": "^1.0",
+    "wpackagist-plugin/autoptimize": "^3",
+    "wpackagist-plugin/breadcrumb-navxt": "^6",
+    "wpackagist-plugin/contact-form-7": "^5.7.4",
+    "wpackagist-plugin/duplicate-post": "^4",
+    "wpackagist-plugin/flamingo": "^2",
+    "wpackagist-plugin/imagify": "^1",
+    "wpackagist-plugin/no-category-base-wpml": "^1",
+    "wpackagist-plugin/polylang": "^3.3.1",
+    "wpackagist-plugin/redirection": "^5",
+    "wpackagist-plugin/safe-svg": "^2",
+    "wpackagist-plugin/simple-custom-post-order": "^2",
+    "wpackagist-plugin/simple-history": "^4",
+    "wpackagist-plugin/wordpress-seo": "^22",
+    "wpackagist-plugin/wp-mail-smtp": "^2"
   },
   "extra": {
     "wordpress-install-dir": "wp",
     "installer-paths": {
-      "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "wp-content/themes/{$name}": ["type:wordpress-theme"]
+      "wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
     }
   }
 }
