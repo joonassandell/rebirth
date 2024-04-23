@@ -1,31 +1,27 @@
 <?php
-/* =======================================
- * The base configuration for WordPress
- * =======================================
- *
- * https://github.com/WordPress/WordPress/blob/master/wp-config-sample.php
- */
-
 /**
  * Load database info and local development settings
  */
-switch (getenv('WORDPRESS_ENV')) {
+switch (getenv('WP_ENVIRONMENT_TYPE')) {
 	case "development": {
-        define('DB_NAME', getenv('WORDPRESS_DB_NAME'));
-        define('DB_USER', getenv('WORDPRESS_DB_USER'));
-        define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD'));
+        define('DB_NAME', 'wordpress');
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'root');
         define('DB_HOST', 'db');
 
-        define('WP_HOME', getenv('DEVELOPMENT_URL'));
-        define('WP_SITEURL', getenv('DEVELOPMENT_URL') . '/wp');
+        define('WP_HOME', $_ENV['DEVELOPMENT_URL']);
+        define('WP_SITEURL', $_ENV['DEVELOPMENT_URL'] . '/wp');
 
-        define('WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content');
+        define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
         define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
 
         define('SAVEQUERIES', true);
         define('WP_DEBUG', true);
+        define('WP_DEBUG_DISPLAY', true);
         define('WP_DEBUG_LOG', true);
         define('FS_METHOD', 'direct');
+
+        define('WP_ENVIRONMENT_TYPE', isset($_GET['production']) ? 'production' : $_ENV['WP_ENVIRONMENT_TYPE']);
 
         break;
 	}
@@ -46,6 +42,8 @@ switch (getenv('WORDPRESS_ENV')) {
         define('WP_DEBUG_DISPLAY', false);
         define('WP_DEBUG_LOG', true);
         ini_set('display_errors', 0);
+
+        define('WP_ENVIRONMENT_TYPE', 'production');
 
         break;
 	}
