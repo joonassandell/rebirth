@@ -1,0 +1,77 @@
+# ======
+# PHP settings
+# ======
+#
+# You should add these to php.ini instead
+
+# php_value upload_max_filesize 64M
+# php_value post_max_size 64M
+# php_value max_execution_time 300
+# php_value max_input_time 300
+
+
+# ======
+# Rewrites
+# ======
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  Options +FollowSymlinks
+
+  RewriteCond %{HTTPS} =on
+  RewriteRule ^ - [env=proto:https]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ - [env=proto:http]
+</IfModule>
+
+# Force https://
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# Rewrite www.example.com → example.com
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#   RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+
+# ======
+# WordPress
+# ======
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.php$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
+
+
+# ======
+# Basics
+# ======
+
+# Block access to directories without a default document
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Block WordPress xmlrpc.php requests
+<files xmlrpc.php>
+  order allow,deny
+  deny from all
+</files>
+
+# Add password
+# AuthType Basic
+# AuthName "Restricted Area"
+# AuthUserFile /root/.htpasswd
+# require valid-user
