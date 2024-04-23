@@ -2,10 +2,28 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2024
+
+Deprecated the rebirth-ui and converted the entire project to a single WordPress boilerplate mainly for legacy reasons. Better description, instructions and theme TBA in the near future.
+
+- Updated all essential dependencies
+- Removed WPML and added Polylang
+- Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder.
+- Change MySQL and WordPress envs (except `DEVELOPMENT_URL`) to static ones in `docker-compose.yml` and `wp-config.example.php`. These have never been changed when using this boilerplate and they create unnecessary complexity with the scripts.
+- Remove root scripts that affected theme, since the node versions might differ
+- Allow the usage of .env.local in remote commands
+- Use the official `WP_ENVIRONMENT_TYPE` instead of the custom `WORDPRESS_ENV`
+- Change default `DEVELOPMENT_URL` to `localhost:8000` and force it when replacing/committing local databases
+- Prompt when replacing remote databases
+- Remove unnecessary `DEVELOPMENT_SSH_KEYS_PATH`
+- Wordpress docker updated to `wordpress:php8.1-apache`
+- Added wp-cli.yml in case it might be needed
+- Changed prettier and editorconfig configs
 
 ## [0.1.3] - 2020-09-31
 
 - Updated node version and requirements info
+
 ## [0.1.2] - 2020-09-31
 
 - Update node version
@@ -48,7 +66,7 @@ All notable changes to this project will be documented in this file. The format 
 - Automatically install theme node_modules
 - Automatically add .env.example -> .env
 - Automatically add theme .env.example -> .env
-- Fix if someone accidentally adds "/" to home variable (PRODUCTION_WP_HOME=/). 
+- Fix if someone accidentally adds "/" to home variable (PRODUCTION_WP_HOME=/).
 - Add missing --allow-root
 - Tweaked instructions, updated deps
 - Don't ignore `web/wp-content/themes/*` by default to keep things simple
@@ -64,7 +82,7 @@ All notable changes to this project will be documented in this file. The format 
 ## [0.0.5] - 2019-10-07
 
 - Update WPMS instructions
-- Revert `PRODUCTION_DOMAIN` -> `PRODUCTION_URL` &  `DEVELOPMENT_DOMAIN` -> `DEVELOPMENT_URL` because protocols may vary
+- Revert `PRODUCTION_DOMAIN` -> `PRODUCTION_URL` & `DEVELOPMENT_DOMAIN` -> `DEVELOPMENT_URL` because protocols may vary
 - Add WP-Rocket & update deps
 - Fix WPMS string replacing in database cloning & deploying
 - Update instructions for WPMS

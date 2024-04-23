@@ -34,7 +34,7 @@ $ make start
 
 Alternatively clone production environment to your local development environment with `$ make start-clone` **but note that this could be very heavy process, so do it with care**. If you are not able to run these commands please refer to the [Makefile](Makefile) and run the commands manually.
 
-**4. Navigate to [127.0.0.1:8000](http://127.0.0.1:8000)**
+**4. Navigate to [localhost:8000](http://localhost:8000)**
 
 Login to WordPress, activate plugins and themes if not already activated. Assets such as images are probably not working, so if you need them you can download them with `$ make assets-pull`.
 
@@ -103,7 +103,7 @@ Backups current database and replaces it with `database/remote/wordpress.sql` du
 Shorcut for `$ make db-pull` & `$ make db-replace`.
 
 #### `$ make db-clean`
-  
+
 Cleans up dumps from `database/local` and `database/remote` to save disk space.
 
 #### `$ make db-commit`
@@ -158,7 +158,6 @@ Wrapper command for deploying theme.
 #### `$ make production-deploy`
 
 Deploy and update everything. Shorcut for `$ make production-update` & `$ make production-theme-deploy`.
-
 
 ---
 
