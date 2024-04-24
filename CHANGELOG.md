@@ -8,7 +8,7 @@ Deprecated the rebirth-ui and converted the entire project to a single WordPress
 
 - Updated all essential dependencies
 - Removed WPML and added Polylang
-- Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder.
+- Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder
 - Change MySQL and WordPress envs (except `DEVELOPMENT_URL`) to static ones in `docker-compose.yml` and `wp-config.example.php`. These have never been changed when using this boilerplate and they create unnecessary complexity with the scripts.
 - Remove root scripts that affected theme, since the node versions might differ
 - Allow the usage of .env.local in remote commands
@@ -18,6 +18,7 @@ Deprecated the rebirth-ui and converted the entire project to a single WordPress
 - Remove unnecessary `DEVELOPMENT_SSH_KEYS_PATH`
 - Wordpress docker updated to `wordpress:php8.1-apache`
 - Added wp-cli.yml in case it might be needed
+- Change .env.example as .env
 - Changed prettier and editorconfig configs
 
 ## [0.1.3] - 2020-09-31

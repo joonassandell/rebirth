@@ -20,7 +20,7 @@ $ git clone git@bitbucket.org:{{author}}/{{name}}.git && cd {{name}}
 
 **2. Prepare for installation**
 
-1. Copy [`.env.example`](.env.example) to `.env` file and set your environment variables. Most of the vars should already be set by the creator of the project. Especially make sure that all the `PRODUCTION_*` vars are set (e.g `PRODUCTION_PASSWORD`).
+1. Copy [`.env`](.env.local) to `.env` file and set your environment variables. Most of the vars should already be set by the creator of the project. Especially make sure that all the `PRODUCTION_*` vars are set (e.g `PRODUCTION_PASSWORD`).
 
 2. If this project contains secret Git repositories, make sure you have SSH access to them.
 
@@ -137,7 +137,7 @@ You may want to:
 - `$ make production-db-replace-clone`: Replace remote database with your local one. Make sure the database name matches with the remote in `.env` (`PRODUCTION_DB_NAME`).
 - `$ make production-assets-push` to sync your local materials to the server
 
-If you want to add new new server environments you need to modify [flightplan.remote.js](flightplan.remote.js), [flightplan.config.js](flightplan.config.js), [Makefile](Makefile), [package.json](package.json), [.env](.env) and [.env.example](.env.example) files.
+If you want to add new new server environments you need to modify [flightplan.remote.js](flightplan.remote.js), [flightplan.config.js](flightplan.config.js), [Makefile](Makefile), [package.json](package.json) and [.env](.env) files.
 
 #### `$ make production-db-replace-clone`
 

@@ -8,7 +8,7 @@
 *.zip
 *.sass-cache
 *.sql
-.env
+.env.local
 ._*
 .cache
 .DS_Store
