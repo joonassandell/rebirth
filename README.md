@@ -22,10 +22,10 @@ This is a modern WordPress stack designed to work with [Rebirth](https://github.
 
 ## Quick start
 
-Quickly install with [create-project](https://github.com/mafintosh/create-project). Make sure your Docker is running and the ports `8000` and `13306` are not in use. Add your values to the following one-liner:
+Quickly install with [create-project](https://github.com/mafintosh/create-project). Add your values to the following one-liner:
 
 ```
-$ npx create-project my-project-dir joonassandell/rebirth-wordpress-project --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="=..."
+$ npx create-project my-project-dir joonassandell/rebirth#main --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="=..."
 ```
 
 After the installation is done jump to phase 3 in the next section.
@@ -36,7 +36,7 @@ This development template assumes that you are using [Rebirth](https://github.co
 
 **1. Clone this git repository and create your project folder**
 
-    $ git clone https://github.com/joonassandell/rebirth-wordpress-project.git my-project-dir
+    $ git clone https://github.com/joonassandell/rebirth.git my-project-dir
 
 **2. Replace all of the following variables in all the project files with _machine readable format_**
 
@@ -63,7 +63,7 @@ $ yo rebirth {{theme-dir}} --project=wordpress
 
 **4. Install all the dependencies and kickstart the project**
 
-Start docker and run:
+Make sure your Docker is running, ports `8000` and `13306` are not in use and you're using node version `14.16.0`.
 
 ```
 $ make start

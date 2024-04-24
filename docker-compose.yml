@@ -1,5 +1,3 @@
-version: '3.1'
-
 services:
   web:
     container_name: {{name}}-web
@@ -15,6 +13,12 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: root
+      WP_ENVIRONMENT_TYPE: development
+    env_file:
+      - path: ./.env
+        required: true
+      - path: ./.env.local
+        required: false
   db:
     container_name: {{name}}-db
     image: mariadb

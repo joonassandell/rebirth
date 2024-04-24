@@ -2,7 +2,7 @@
 /**
  * Load database info and local development settings
  */
-switch (getenv('WP_ENVIRONMENT_TYPE')) {
+switch ($_ENV['WP_ENVIRONMENT_TYPE']) {
 	case "development": {
         define('DB_NAME', 'wordpress');
         define('DB_USER', 'root');
@@ -21,7 +21,7 @@ switch (getenv('WP_ENVIRONMENT_TYPE')) {
         define('WP_DEBUG_LOG', true);
         define('FS_METHOD', 'direct');
 
-        define('WP_ENVIRONMENT_TYPE', isset($_GET['production']) ? 'production' : $_ENV['WP_ENVIRONMENT_TYPE']);
+        define('WP_ENVIRONMENT_TYPE', isset($_GET['production']) ? 'production' : 'development');
 
         break;
 	}
