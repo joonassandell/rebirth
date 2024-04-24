@@ -22,7 +22,7 @@ This is a modern WordPress stack designed to work with [Rebirth](https://github.
 
 ## Quick start
 
-Quickly install with [create-project](https://github.com/mafintosh/create-project). Add your values to the following one-liner:
+Quickly install with [create-project](https://github.com/mafintosh/create-project). Make sure your Docker is running and the ports `8000` and `13306` are not in use. Add your values to the following one-liner:
 
 ```
 $ npx create-project my-project-dir joonassandell/rebirth-wordpress-project --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="=..."

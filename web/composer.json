@@ -60,5 +60,8 @@
         "type:wordpress-theme"
       ]
     }
+  },
+  "config": {
+    "allow-plugins": true
   }
 }
