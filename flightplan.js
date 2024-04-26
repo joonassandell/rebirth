@@ -62,7 +62,7 @@ plan.local(['start'], local => {
     fi
 
     if [ ! -f web/.auth.example.json ]; then
-      cp web/.auth.example.json web/auth.json
+      cp web/auth.example.json web/auth.json
     fi
 
     docker-compose up -d
