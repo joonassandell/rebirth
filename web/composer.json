@@ -8,44 +8,36 @@
   "repositories": [
     {
       "type": "composer",
+      "url": "https://connect.advancedcustomfields.com"
+    },
+    {
+      "type": "composer",
       "url": "https://wpackagist.org"
     },
     {
       "type": "composer",
       "url": "https://packagist.org"
-    },
-    {
-      "type": "package",
-      "package": {
-        "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "6.2.9",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&a=download&k{{acf-key}}"
-        }
-      }
     }
   ],
   "require": {
     "php": ">=8.1",
     "johnpbloch/wordpress": "^6",
-    "advanced-custom-fields/advanced-custom-fields-pro": "*",
+    "wpengine/advanced-custom-fields-pro": "^6",
     "roots/bedrock-autoloader": "^1.0",
+    "wpackagist-plugin/acf-options-for-polylang": "^1.1",
     "wpackagist-plugin/autoptimize": "^3",
-    "wpackagist-plugin/breadcrumb-navxt": "^6",
     "wpackagist-plugin/contact-form-7": "^5.7.4",
     "wpackagist-plugin/duplicate-post": "^4",
     "wpackagist-plugin/flamingo": "^2",
-    "wpackagist-plugin/imagify": "^1",
     "wpackagist-plugin/no-category-base-wpml": "^1",
     "wpackagist-plugin/polylang": "^3.3.1",
     "wpackagist-plugin/redirection": "^5",
+    "wpackagist-plugin/resmushit-image-optimizer": "^1",
     "wpackagist-plugin/safe-svg": "^2",
     "wpackagist-plugin/simple-custom-post-order": "^2",
     "wpackagist-plugin/simple-history": "^4",
     "wpackagist-plugin/wordpress-seo": "^22",
-    "wpackagist-plugin/wp-mail-smtp": "^2"
+    "wpackagist-plugin/wp-mail-smtp": "^4"
   },
   "extra": {
     "wordpress-install-dir": "wp",

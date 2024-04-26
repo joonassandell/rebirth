@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file. The format 
 
 Deprecated the rebirth-ui and converted the entire project to a single WordPress boilerplate mainly for legacy reasons. Better description, instructions and theme TBA in the near future.
 
+- Add [correct way of installing acf with composer](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer)
 - Updated all essential dependencies
 - Removed WPML and added Polylang
 - Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder

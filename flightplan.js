@@ -50,7 +50,7 @@ plan.local(['start', 'update', 'assets-pull', 'db-pull', 'db-replace'], () => {
  * Start & update
  * ====== */
 
-plan.local(['start'], (local) => {
+plan.local(['start'], local => {
   local.log('Preparing files and installing dependencies...');
   local.exec(`
     if [ ! -f web/.htaccess ]; then
@@ -61,13 +61,17 @@ plan.local(['start'], (local) => {
       cp web/wp-config.example.php web/wp-config.php
     fi
 
+    if [ ! -f web/.auth.example.json ]; then
+      cp web/.auth.example.json web/auth.json
+    fi
+
     docker-compose up -d
 
     (cd web && composer update)
   `);
 });
 
-plan.local(['update'], (local) => {
+plan.local(['update'], local => {
   local.log('Updating dependencies...');
   local.exec(`
     docker-compose up -d
@@ -81,7 +85,7 @@ plan.local(['update'], (local) => {
  * Pull assets
  * ====== */
 
-plan.local(['assets-pull'], (local) => {
+plan.local(['assets-pull'], local => {
   local.log('Downloading uploads folder...');
   local.exec(
     `rsync -avz -e 'ssh -p ${sshPort}' \
@@ -94,7 +98,7 @@ plan.local(['assets-pull'], (local) => {
  * Backup database
  * ====== */
 
-plan.local(['db-backup'], (local) => {
+plan.local(['db-backup'], local => {
   local.log(`Creating local dump to database/local/wordpress-${date}.sql`);
   local.exec(`mkdir -p database/local`, { silent: true, failsafe: true });
   local.exec(
@@ -108,7 +112,7 @@ plan.local(['db-backup'], (local) => {
  * Commit database
  * ====== */
 
-plan.local(['db-commit'], (local) => {
+plan.local(['db-commit'], local => {
   local.log('Dumping local database to database/wordpress.sql');
   local.exec(
     `docker-compose exec -T db bash -c 'mysqldump -uroot -proot \
@@ -121,7 +125,7 @@ plan.local(['db-commit'], (local) => {
  * Pull database
  * ====== */
 
-plan.remote(['db-pull'], (remote) => {
+plan.remote(['db-pull'], remote => {
   remote.log(
     `Dumping remote database to ${webRoot}/tmp/database/remote/${dbName}-${date}.sql`,
   );
@@ -134,7 +138,7 @@ plan.remote(['db-pull'], (remote) => {
   );
 });
 
-plan.local(['db-pull'], (local) => {
+plan.local(['db-pull'], local => {
   local.log(`Pulling remote database dump to database/remote/wordpress.sql`);
   local.exec(`mkdir -p database/remote`, { silent: true, failsafe: true });
   local.exec(`rsync -avz -e 'ssh -p ${sshPort}' \
@@ -144,7 +148,7 @@ plan.local(['db-pull'], (local) => {
   );
 });
 
-plan.remote(['db-pull'], (remote) => {
+plan.remote(['db-pull'], remote => {
   remote.log(
     `Removing remote database dump from ${webRoot}/tmp/database/remote/${dbName}-${date}.sql`,
   );
@@ -155,7 +159,7 @@ plan.remote(['db-pull'], (remote) => {
  * Replace database
  * ====== */
 
-plan.local(['db-replace'], (local) => {
+plan.local(['db-replace'], local => {
   let database = plan.runtime.options.database || 'remote/wordpress.sql';
   local.log(`Replacing local database with database/${database}`);
 

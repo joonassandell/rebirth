@@ -1,7 +1,3 @@
-# ======
-# Numerous Always-Ignore Extensions, OS or Editor Folders
-# ======
-
 *.diff
 *.err
 *.log
@@ -24,19 +20,16 @@ nbproject
 Thumbs.db
 docker-compose.override.yml
 
-# ======
-# Project speficic ignores
-# ======
-
 node_modules
+
 web/.htaccess_lscache*
+web/auth.json
 
 database/*
 !database/.gitkeep
 !database/wordpress.sql
 
 web/wp
-web/vendor
 web/.htaccess
 web/wp-config.php
 

@@ -25,10 +25,10 @@ This is a modern WordPress stack designed to work with [Rebirth](https://github.
 Quickly install with [create-project](https://github.com/mafintosh/create-project). Add your values to the following one-liner:
 
 ```
-$ npx create-project my-project-dir joonassandell/rebirth#main --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="=..."
+$ npx create-project my-project-dir joonassandell/rebirth#main --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="123" --acf-pw="https://registeredacfdomain.com"
 ```
 
-After the installation is done jump to phase 3 in the next section.
+Read more about the variables from below. After the installation is done jump to phase 3 in the next section.
 
 ## Getting started
 
@@ -45,7 +45,8 @@ This development template assumes that you are using [Rebirth](https://github.co
 - `{{theme-dir}}`: This will be your theme directory which will be generated later (e.g. `my-theme-dir`)
 - `{{author}}`: Author of this project (e.g. `joonassandell`)
 - `{{production-url}}`: Website url of the project in which the app will be published (e.g. `project-name.com`, _Don't add protocol or trailing slashes_.)
-- `{{acf-key}}` ACF subscription key (e.g. `=9wZXJ8ZGF0...`)
+- `{{acf-key}}`: ACF subscription key (e.g. `9wZXJ8ZGF0...`)
+- `{{acf-pw}}`: ACF password (e.g. `https://registeredacfdomain.com`). Note that the [password can be an existing site that is already active for the license key or a new site url](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer).
 
 By default this template requires [ACF](https://www.advancedcustomfields.com) so you need to have it purchased. ACF subscription key can be found from [advancedcustomfields.com/my-account](https://www.advancedcustomfields.com/my-account).
 

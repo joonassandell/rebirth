@@ -31,7 +31,7 @@ const date = new Date().getTime();
 const devDomain = process.env.DEVELOPMENT_URL.replace(/(^\w+:|^)\/\//, '');
 const tmpDir = `wp-update-${date}`;
 
-plan.local('start', (local) => {
+plan.local('start', local => {
   const input = local.prompt(
     'Are you sure you want to continue with the process? [y/n]',
   );
@@ -41,7 +41,7 @@ plan.local('start', (local) => {
   }
 });
 
-plan.local(['start', 'update', 'assets-push', 'db-replace'], (local) => {
+plan.local(['start', 'update', 'assets-push', 'db-replace'], local => {
   sshHost = plan.runtime.hosts[0].host;
   sshUser = plan.runtime.hosts[0].username;
   sshPort = plan.runtime.hosts[0].port;
@@ -61,20 +61,21 @@ plan.local(['start', 'update', 'assets-push', 'db-replace'], (local) => {
  * Install WordPress
  * ====== */
 
-plan.remote(['start', 'update'], (remote) => {
+plan.remote(['start', 'update'], remote => {
   remote.exec(`mkdir -p ${webRoot}/tmp/wp-deployments`, {
     silent: true,
     failsafe: true,
   });
 });
 
-plan.local(['start', 'update'], (local) => {
+plan.local(['start', 'update'], local => {
   const filesToCopy = [
     'web/.htaccess.example',
     'web/index.php',
     'web/wp-config.php',
     'web/wp-cli.yml',
     'web/composer.json',
+    'web/auth.json',
   ];
 
   local.log(
@@ -85,7 +86,7 @@ plan.local(['start', 'update'], (local) => {
   });
 });
 
-plan.remote(['start', 'update'], (remote) => {
+plan.remote(['start', 'update'], remote => {
   remote.log('Installing Composer...');
   remote.exec(
     `curl -sS https://getcomposer.org/installer | php && mv composer.phar ${webRoot}/`,
@@ -95,6 +96,7 @@ plan.remote(['start', 'update'], (remote) => {
   const deploymentPath = `${webRoot}/tmp/wp-deployments/${tmpDir}/web`;
 
   remote.exec(`cp ${deploymentPath}/composer.json ${webRoot}/`);
+  remote.exec(`cp ${deploymentPath}/auth.json ${webRoot}/`);
 
   if (plan.runtime.task === 'start') {
     remote.exec(`cp ${deploymentPath}/.htaccess.example ${webRoot}/.htaccess`);
@@ -119,10 +121,11 @@ plan.remote(['start', 'update'], (remote) => {
   remote.log(`Removing uploaded files from ${webRoot} & ${deploymentPath}/`);
   remote.exec(`rm -r ${webRoot}/composer.json`, { failsafe: true });
   remote.exec(`rm -r ${webRoot}/composer.lock`, { failsafe: true });
+  remote.exec(`rm -r ${webRoot}/auth.json`, { failsafe: true });
   remote.exec(`rm -r ${deploymentPath}/`);
 });
 
-plan.local(['start', 'update'], (local) => {
+plan.local(['start', 'update'], local => {
   local.log('Deploying mu-plugins folder...');
   local.exec(
     `rsync -avz -e "ssh -p ${sshPort}" \
@@ -137,7 +140,7 @@ plan.local(['start', 'update'], (local) => {
  * Push Assets
  * ====== */
 
-plan.local(['assets-push'], (local) => {
+plan.local(['assets-push'], local => {
   local.log('Deploying uploads folder...');
   local.exec(
     `rsync -avz -e "ssh -p ${sshPort}" \
@@ -150,7 +153,7 @@ plan.local(['assets-push'], (local) => {
  * Replace Database
  * ====== */
 
-plan.local(['db-replace'], (local) => {
+plan.local(['db-replace'], local => {
   const input = local.prompt(
     'Are you sure you want to continue with the process? [y/n]',
   );
@@ -160,7 +163,7 @@ plan.local(['db-replace'], (local) => {
   }
 });
 
-plan.local(['db-replace'], (local) => {
+plan.local(['db-replace'], local => {
   local.log('Creating local database dump...');
   local.exec(`mkdir -p database/local`, { silent: true, failsafe: true });
   local.exec(`docker-compose exec -T db bash -c "mysqldump -uroot -proot \
@@ -170,7 +173,7 @@ plan.local(['db-replace'], (local) => {
   local.transfer([`database/local/wordpress-${date}.sql`], `${webRoot}/tmp`);
 });
 
-plan.remote(['db-replace'], (remote) => {
+plan.remote(['db-replace'], remote => {
   remote.log(
     `Backing up remote database to ${webRoot}/tmp/database/remote/wordpress-${date}.sql`,
   );
