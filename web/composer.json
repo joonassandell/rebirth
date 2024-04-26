@@ -1,6 +1,5 @@
 {
   "name": "{{author}}/{{name}}",
-  "description": "Local WordPress development environment for {{human-name}}",
   "type": "project",
   "license": "MIT",
   "homepage": "{{production-url}}",

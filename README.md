@@ -25,7 +25,7 @@ This is a modern WordPress stack designed to work with [Rebirth](https://github.
 Quickly install with [create-project](https://github.com/mafintosh/create-project). Add your values to the following one-liner:
 
 ```
-$ npx create-project my-project-dir joonassandell/rebirth#main --human-name="My Project" --theme-dir=my-theme-dir --author=joonassandell --production-url=my-project.com --acf-key="123" --acf-pw="https://registeredacfdomain.com"
+$ npx create-project my-project-dir joonassandell/rebirth#main --theme-dir=my-theme-dir --author=joonassandell --production-url=https://my-project.com --acf-key="123" --acf-pw="https://registeredacfdomain.com"
 ```
 
 Read more about the variables from below. After the installation is done jump to phase 3 in the next section.
@@ -41,10 +41,9 @@ This development template assumes that you are using [Rebirth](https://github.co
 **2. Replace all of the following variables in all the project files with _machine readable format_**
 
 - `{{name}}`: This is your project name (e.g. `my-project-dir`; It's recommended to use same name as your project folders name which you created above. This should also be used for git urls).
-- `{{human-name}}`: This is your project human readable name (e.g. `My Project`).
 - `{{theme-dir}}`: This will be your theme directory which will be generated later (e.g. `my-theme-dir`)
 - `{{author}}`: Author of this project (e.g. `joonassandell`)
-- `{{production-url}}`: Website url of the project in which the app will be published (e.g. `project-name.com`, _Don't add protocol or trailing slashes_.)
+- `{{production-url}}`: Website url of the project in which the app will be published (e.g. `https://project-name.com`, _add without trailing slash_.)
 - `{{acf-key}}`: ACF subscription key (e.g. `9wZXJ8ZGF0...`)
 - `{{acf-pw}}`: ACF password (e.g. `https://registeredacfdomain.com`). Note that the [password can be an existing site that is already active for the license key or a new site url](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer).
 
@@ -175,10 +174,10 @@ RewriteRule . index.php [L]
 11. At this time, in path-based installs you cannot remove the `/blog` slug without manual configuration to the network options in a non-obvious place. Make sure your permalinks are set as wanted with custom structure (e.g. `/articles/%postname%`) or you can [remove the `/blog`](https://isabelcastillo.com/remove-blog-slug-multisite) which is not recommended.
 12. Update your database dump once you have created network and added sub blogs with `$ make db-commit`. Remember to commit all your changes.
 
-### In production my WordPress home is located in a subdir (e.g. https://{{production-url}}/myhome). How to make it work?
+### In production my WordPress home is located in a subdir (e.g. {{production-url}}/myhome). How to make it work?
 
 1. In wp-config.php
-   - Change `define('WP_SITEURL', 'https://{{production-url}}/wp');` to `define('WP_SITEURL', 'https://{{production-url}}/myhome/wp');`
+   - Change `define('WP_SITEURL', '{{production-url}}/wp');` to `define('WP_SITEURL', '{{production-url}}/myhome/wp');`
    - Change `define('WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/wp-content');` to `define('WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/myhome/wp-content');`
    - Change `define('ABSPATH', dirname( __FILE__ ) . '/wp/');` to `define('ABSPATH', dirname( __FILE__ ) . '/myhome/wp/');`
    - If using WPMS change `define('PATH_CURRENT_SITE', getenv('WORDPRESS_ENV') == 'development' ? '/' : '/');` to `define('PATH_CURRENT_SITE', getenv('WORDPRESS_ENV') == 'development' ? '/' : '/myhome/');`
