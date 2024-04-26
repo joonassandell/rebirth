@@ -1,4 +1,6 @@
-# Rebirth — WordPress Development Environment
+<img width="100%" src="./rebirth.png" alt="Rebirth logo">
+
+# Rebirth
 
 This is a modern WordPress stack designed to work with [Rebirth](https://github.com/joonassandell/rebirth) that helps you get started with the best development tools and project structure.
 
