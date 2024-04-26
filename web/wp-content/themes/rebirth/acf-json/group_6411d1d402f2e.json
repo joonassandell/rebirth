@@ -1,0 +1,77 @@
+{
+    "key": "group_6411d1d402f2e",
+    "title": "Image: Portrait (3:4)",
+    "fields": [
+        {
+            "key": "field_6411d1d41a9c8",
+            "label": "Image",
+            "name": "image_img",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Ideal size (3:4): 684x912px.\r\n\r\nAll images uploaded are automatically cropped to match ratios.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "portrait_m"
+        },
+        {
+            "key": "field_650069a4e3d3e",
+            "label": "Image (Dark)",
+            "name": "image_img_dark",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Apply image for dark mode. Light mode image is required for this to work.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "portrait_m"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "audio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Component",
+    "show_in_rest": 0,
+    "modified": 1714057637
+}

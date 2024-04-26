@@ -1,0 +1,257 @@
+{
+    "key": "group_63da5ce9525ab",
+    "title": "Main Content",
+    "fields": [
+        {
+            "key": "field_63da755513473",
+            "label": "Heading",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63da6d1f22c66",
+            "label": "Heading",
+            "name": "main_heading",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_63da5ceb22c63",
+                    "label": "Heading text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Bold applies highlight color and line breaks (Shift+Enter) apply line breaks",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": "wysiwyg-small"
+                    },
+                    "show_in_graphql": 0,
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "bold",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_63da6c9422c65",
+                    "label": "Heading size",
+                    "name": "size",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Change heading size, by default this is large",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 0,
+                    "choices": {
+                        "h1": "Extra large",
+                        "h2": "Large",
+                        "h3": "Medium",
+                        "h4": "Medium small",
+                        "h5": "Small",
+                        "h6": "Extra small"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_63da6db922c67",
+                    "label": "Heading tag",
+                    "name": "tag",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Apply h1 if this heading is the first visible element in the page. SEO purposes only.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 0,
+                    "choices": {
+                        "h1": "h1",
+                        "h2": "h2"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
+            "key": "field_63da756f13474",
+            "label": "Paragraph & Buttons",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63da675522c64",
+            "label": "Paragraph",
+            "name": "main_content",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_63db7ad568110",
+                    "label": "Paragraph text",
+                    "name": "text",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Prefer only a single paragraph",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 0,
+                    "default_value": "",
+                    "tabs": "visual",
+                    "toolbar": "simple",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_63e4d9ed3666c",
+            "label": "Buttons",
+            "name": "main_buttons",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_63e4d9833439d"
+            ],
+            "display": "group",
+            "layout": "table",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_63db7de2b8eab",
+            "label": "Settings & Extras",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63db7d06b8eaa",
+            "label": "Jump link",
+            "name": "main_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "This id is used as jump link for the current component. If this is not set, subtitle or heading is used as fallback. Use hash-like urls (e.g. my-link) for clarity, it'll be converted to one anyways.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "my-id",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "audio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Component",
+    "show_in_rest": 0,
+    "modified": 1714129745
+}

@@ -1,0 +1,7 @@
+{% if logo %}
+  <span class="Logo Logo--{{ logo }} {{ class }}" {{ attrs }}>
+    {% if logo == 'wordmark' %}{% include "wordmark.twig" %}{% endif %}
+    {% if logo == 'logomark' %}{% include "logomark.twig" %}{% endif %}
+  </span>
+{% endif %}
+

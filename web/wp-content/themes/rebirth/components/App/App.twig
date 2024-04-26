@@ -1,0 +1,18 @@
+  {% include 'head.twig' %}
+  {% block head %}
+  {% endblock %}
+</head>
+  <body>
+    <div class="App">
+      {% include "Header.twig" %}
+      {% block content_before_template %}{% endblock %}
+      <main class="Template {{ template_class }}">
+        {% block content %}
+          No content.
+        {% endblock %}
+      </main>
+      {% include 'Footer.twig' %}
+      {% include 'foot.twig' %}
+    </div>
+  </body>
+</html>

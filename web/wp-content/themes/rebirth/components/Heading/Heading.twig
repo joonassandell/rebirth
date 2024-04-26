@@ -1,0 +1,11 @@
+{% set tag = tag ? : 'h2' %}
+{% set size = size and tag != size ? size :
+              tag == 'h1' and not size ? 'h2' :
+              tag == size or tag and not size ? null %}
+{% set classes = size ~ ' ' ~ class %}
+
+{% if text %}
+  <{{ tag }} class="Heading {{ classes }}" {{ attrs }}>
+    {{ text  }}
+  </{{ tag }}>
+{% endif %}

@@ -1,0 +1,43 @@
+.Template--single {
+  .Template-hero {
+    margin-bottom: var(--space-l);
+  }
+
+  .Template-hero-main {
+    text-align: center;
+  }
+
+  .Template-meta {
+    align-items: center;
+    color: var(--text-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    justify-content: center;
+  }
+
+  .Template-author {
+    align-items: center;
+    color: var(--text-strong);
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .Template-hero-author-image {
+    max-width: var(--space-m);
+  }
+
+  .Template-hero-figure {
+    max-width: calc(var(--space) * 60);
+  }
+
+  .Template-main {
+    border-bottom: var(--border-width) solid var(--surface-0-border);
+    padding-bottom: var(--section-space);
+  }
+
+  .Template-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

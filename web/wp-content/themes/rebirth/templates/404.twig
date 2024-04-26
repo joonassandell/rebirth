@@ -1,0 +1,23 @@
+{% extends "App.twig" %}
+
+{% set template_class = "Template--404" %}
+
+{% block content %}
+  {% include "templates/partials/hero.twig" with {
+    heading: options.error_404_heading ? : __('Page not found', 'app'),
+  } %}
+  <div class="Template-main">
+    <div class="wrap">
+      {% include "Content.twig" with {
+        class: 'Template-content',
+        text: options.error_404_content ? : __('Sorry, the page you were looking for could not be found. If you entered a web address please check it was correct.', 'app'),
+      } %}
+      {% include "Button.twig" with {
+        button: {
+          url: languages.home_url,
+          title: __('Go to homepage', 'app'),
+        }
+      } only %}
+    </div>
+  </div>
+{% endblock %}

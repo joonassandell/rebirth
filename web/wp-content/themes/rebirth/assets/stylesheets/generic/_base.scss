@@ -1,0 +1,144 @@
+@use '../../mixins' as *;
+
+:root {
+  background-color: var(--surface-0);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  min-width: var(--root-min-width);
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  text-wrap: pretty;
+  -webkit-touch-callout: none;
+}
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+:where(blockquote, table, fieldset, figure, pre, ul, ol, dl, p) {
+  margin: 0 0 var(--space);
+}
+
+:where(pre) {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size);
+}
+
+:where(ul, ol, dl) {
+  padding: 0 0 0 var(--space);
+}
+
+:where(nav ul) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+:where(a) {
+  color: var(--link);
+  text-decoration: none;
+
+  &:active {
+    color: var(--link);
+  }
+
+  &:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+}
+
+:where(b, strong) {
+  font-weight: var(--font-weight-strong);
+}
+
+:where(hr) {
+  border: 0;
+  border-top: var(--border-width) solid var(--surface-0-border);
+  display: block;
+  height: var(--border-width);
+  margin: var(--space) 0;
+  padding: 0;
+}
+
+:where(small) {
+  color: var(--text-light);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+}
+
+:focus {
+  outline: 0;
+}
+
+:focus-visible {
+  outline: var(--border-width) solid var(--primary);
+  outline-offset: var(--border-width);
+
+  @include mqTouch {
+    outline: 0;
+  }
+}
+
+::-moz-selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
+}
+
+:where(img, embed, object, iframe, video) {
+  max-width: 100%;
+}
+
+:where(iframe) {
+  width: 100% !important;
+}
+
+:where(button) {
+  all: unset;
+  box-sizing: border-box;
+}
+
+:where(input) {
+  font-weight: var(--font-weight);
+}
+
+:where(cite) {
+  display: block;
+  font-style: unset;
+}
+
+:where(input, textarea) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  @include iOS() {
+    font-size: 16px;
+  }
+}

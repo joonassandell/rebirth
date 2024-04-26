@@ -1,0 +1,16 @@
+<footer class="Footer">
+  <div class="Footer-wrap wrap">
+    &copy; {{ fn('date', 'Y') }} {{ site.title }}
+    <nav class="Footer-lang">
+      <ul class="Footer-lang-ul">
+        {% for item in languages.languages %}
+          <li class="Footer-lang-item {{ item.current_lang ? 'is-active' }}">
+            <a href="{{ item.url }}" class="Header-nav-link">
+              {{ item.name }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</footer>

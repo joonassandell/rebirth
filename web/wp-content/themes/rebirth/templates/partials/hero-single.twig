@@ -1,0 +1,52 @@
+{% set hero_main = post.meta('tpl_hero_main') %}
+{% set heading =
+  heading ? { text: heading } :
+  hero_main.text ? { text: hero_main.text } :
+  post.title ? { text: post.title } : {}
+%}
+{% set content = content ? : hero_main.main_content ? : {} %}
+{% set buttons = buttons ? : hero_main.main_buttons ? : {} %}
+{% set img_sizes = fn('wp_get_registered_image_subsizes') %}
+{% set author_name = post.author.first_name and post.author.last_name ? post.author.first_name ~ ' ' ~ post.author.last_name : post.author.first_name ? : post.author.user_nicename %}
+
+<header class="Template-hero">
+  <div class="Template-hero-main wrap">
+    {% include "Heading.twig" with {
+      size: 'h1',
+      text: post.title,
+      tag: 'h1',
+    } only %}
+    <div class="Template-meta">
+      <div class="Template-author">
+        {% include "Image.twig" with {
+          border_radius: 'full',
+          class: 'Template-hero-author-image',
+          image_img: post.author.meta('profile_picture_custom') ? : post.author.avatar.abs_url,
+          ratio: 'square',
+          sizes: img_sizes.square_xs.width ~ 'px',
+        } only %}
+        <div class="Template-author-name">
+          {{ author_name }}
+        </div>
+      </div>
+      —
+      <div class="Template-date">
+       {{ post.date }}
+      </div>
+      —
+      <div class="Template-category">
+       {{ post.category }}
+      </div>
+    </div>
+  </div>
+  {% if post.thumbnail %}
+    <div class="wrap Template-hero-figure">
+      {% include "Image.twig" with {
+        fetch_priority: 'high',
+        image_img: post.thumbnail,
+        loading: 'eager',
+        ratio: 'landscape',
+      } only %}
+    </div>
+  {% endif %}
+</header>

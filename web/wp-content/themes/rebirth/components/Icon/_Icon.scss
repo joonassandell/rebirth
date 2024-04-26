@@ -1,0 +1,21 @@
+:root {
+  --Icon-size-m: 20px;
+  --Icon-size-s: 16px;
+}
+
+.Icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  height: var(--Icon-size, var(--Icon-size-m));
+  width: var(--Icon-size, var(--Icon-size-m));
+
+  svg {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+  }
+
+  &.-size\:s {
+    --Icon-size: var(--Icon-size-s);
+  }
+}

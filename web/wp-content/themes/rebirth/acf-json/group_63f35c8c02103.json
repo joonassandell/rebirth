@@ -1,0 +1,77 @@
+{
+    "key": "group_63f35c8c02103",
+    "title": "Image: Landscape (21:9 \/ 16:9)",
+    "fields": [
+        {
+            "key": "field_63f35c8d15cfd",
+            "label": "Image",
+            "name": "image_img",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Ideal sizes in preferred order (21:9): 2560x1097, 1920x823, 1280x549.\r\n\r\nSmall\/mobile image force the ratio to 16:9 (cropped from 21:9) and large image to 21:9. All images uploaded are automatically cropped to match ratios.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "landscape_m"
+        },
+        {
+            "key": "field_6500621a388a2",
+            "label": "Image (Dark)",
+            "name": "image_img_dark",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Apply image for dark mode. Light mode image is required for this to work.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "landscape_m"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "audio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Component",
+    "show_in_rest": 0,
+    "modified": 1714057644
+}

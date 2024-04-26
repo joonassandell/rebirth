@@ -1,0 +1,11 @@
+{% if icon %}
+  {% set size = size == 'small' ? '-size:s' %}
+  {% set classes = size ~ ' ' ~ class %}
+
+  <span class="Icon Icon--{{ icon }} {{ classes }}" {{ attrs }}>
+    {% if icon == 'arrowRight' %}{% include "arrowRight.twig" %}{% endif %}
+    {% if icon == 'sun' %}{% include "sun.twig" %}{% endif %}
+    {% if icon == 'moon' %}{% include "moon.twig" %}{% endif %}
+  </span>
+{% endif %}
+

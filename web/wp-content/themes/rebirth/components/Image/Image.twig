@@ -1,0 +1,183 @@
+{% set img = image_img ? Image(image_img) %}
+{% set img_dark = image_img_dark ? Image(image_img_dark) %}
+
+{% if img %}
+  {% set fetch_priority = fetch_priority ? "fetchpriority='#{fetch_priority}'" %}
+  {% set alt = img.alt %}
+  {% set loading = loading ? "loading='#{loading}'" : 'loading="lazy"' %}
+  {% set sizes = sizes ? "sizes='#{sizes}'" %}
+  {% set border_radius = border_radius|trim == 'full' ? '-border:radius:full' :
+                         border_radius or border_radius is not defined ? '-border:radius' %}
+  {% set classes = border_radius ~ ' ' ~ margin ~ ' ' ~ class %}
+  {% set attrs = loading ~ ' ' ~ fetch_priority ~ ' ' ~ sizes ~ ' ' ~ attrs %}
+
+  {% if ratio == 'landscape' or ratio == 'landscape_16_9' %}
+    {% set width = {
+      xs: img.sizes.landscape_xs.width,
+      s: img.sizes.landscape_s.width,
+      m: img.sizes.landscape_m.width,
+      l: img.sizes.landscape_l.width,
+      xl: img.sizes.landscape_xl.width ? : img.width,
+    } %}
+
+     {% set width_dark = {
+      xs: img_dark.sizes.landscape_xs.width,
+      s: img_dark.sizes.landscape_s.width,
+      m: img_dark.sizes.landscape_m.width,
+      l: img_dark.sizes.landscape_l.width,
+      xl: img_dark.sizes.landscape_xl.width ? : img_dark.width,
+    } %}
+
+    <figure class="Image {{ ratio == 'landscape_16_9' ? '-ratio:landscape:16:9' : '-ratio:landscape' }} {{ classes }}">
+      <picture>
+        {% if img_dark %}
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="
+              {{ img_dark.src('landscape_xs') }} {{ width_dark.xs ? width_dark.xs ~ 'w'}},
+              {{ img_dark.src('landscape_s') }} {{ width_dark.s ? width_dark.s ~ 'w' }},
+              {{ img_dark.src('landscape_m') }} {{ width_dark.m ? width_dark.m ~ 'w' }},
+              {{ img_dark.src('landscape_l') }} {{ width_dark.l ? width_dark.l ~ 'w' }},
+              {{ img_dark.src('landscape_xl') }} {{ width_dark.xl ? width_dark.xl ~ 'w' }}
+            "
+          />
+        {% endif %}
+        <img
+          alt="{{ alt }}"
+          src="{{ img.src('landscape_xs') }}"
+          srcset="
+            {{ img.src('landscape_xs') }} {{ width.xs ? width.xs ~ 'w'}},
+            {{ img.src('landscape_s') }} {{ width.s ? width.s ~ 'w' }},
+            {{ img.src('landscape_m') }} {{ width.m ? width.m ~ 'w' }},
+            {{ img.src('landscape_l') }} {{ width.l ? width.l ~ 'w' }},
+            {{ img.src('landscape_xl') }} {{ width.xl ? width.xl ~ 'w' }}
+          "
+          {{ attrs }}
+        />
+      </picture>
+    </figure>
+  {% endif %}
+
+  {% if ratio == 'square' %}
+    {% set width = {
+      xs: img.sizes.square_xs.width,
+      s: img.sizes.square_s.width,
+      m: img.sizes.square_m.width,
+      l: img.sizes.square_l.width,
+      xl: img.sizes.square_xl.width ? : img.width,
+    } %}
+
+    {% set width_dark = {
+      xs: img_dark.sizes.square_xs.width,
+      s: img_dark.sizes.square_s.width,
+      m: img_dark.sizes.square_m.width,
+      l: img_dark.sizes.square_l.width,
+      xl: img_dark.sizes.square_xl.width ? : img_dark.width,
+    } %}
+
+    <figure class="Image -ratio:square {{ classes }}">
+      <picture>
+        {% if img_dark %}
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="
+              {{ img_dark.src('square_xs') }} {{ width_dark.xs ? width_dark.xs ~ 'w'}},
+              {{ img_dark.src('square_s') }} {{ width_dark.s ? width_dark.s ~ 'w' }},
+              {{ img_dark.src('square_m') }} {{ width_dark.m ? width_dark.m ~ 'w' }},
+              {{ img_dark.src('square_l') }} {{ width_dark.l ? width_dark.l ~ 'w' }},
+              {{ img_dark.src('square_xl') }} {{ width_dark.xl ? width_dark.xl ~ 'w' }}
+            "
+          />
+        {% endif %}
+        <img
+          alt="{{ alt }}"
+          src="{{ img.src('square_xs') }}"
+          srcset="
+            {{ img.src('square_xs') }} {{ width.xs ? width.xs ~ 'w'}},
+            {{ img.src('square_s') }} {{ width.s ? width.s ~ 'w' }},
+            {{ img.src('square_m') }} {{ width.m ? width.m ~ 'w' }},
+            {{ img.src('square_l') }} {{ width.l ? width.l ~ 'w' }},
+            {{ img.src('square_xl') }} {{ width.xl ? width.xl ~ 'w' }}
+          "
+          {{ attrs }}
+        />
+      </picture>
+    </figure>
+  {% endif %}
+
+  {% if ratio == 'monitor' %}
+    {% set width = {
+      s: img.sizes.monitor_s.width,
+      m: img.sizes.monitor_m.width,
+      l: img.sizes.monitor_l.width ? : img.width,
+    } %}
+
+    {% set width_dark = {
+      s: img_dark.sizes.monitor_s.width,
+      m: img_dark.sizes.monitor_m.width,
+      l: img_dark.sizes.monitor_l.width ? : img_dark.width,
+    } %}
+
+    <figure class="Image -ratio:monitor {{ classes }}">
+      <picture>
+        {% if img_dark %}
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcset="
+              {{ img_dark.src('monitor_s') }} {{ width_dark.s ? width_dark.s ~ 'w' }},
+              {{ img_dark.src('monitor_m') }} {{ width_dark.m ? width_dark.m ~ 'w' }},
+              {{ img_dark.src('monitor_l') }} {{ width_dark.l ? width_dark.l ~ 'w' }}
+            "
+          />
+        {% endif %}
+        <img
+          alt="{{ alt }}"
+          src="{{ img.src('monitor_s') }}"
+          srcset="
+            {{ img.src('monitor_s') }} {{ width.s ? width.s ~ 'w' }},
+            {{ img.src('monitor_m') }} {{ width.m ? width.m ~ 'w' }},
+            {{ img.src('monitor_l') }} {{ width.l ? width.l ~ 'w' }}
+          "
+          {{ attrs }}
+        />
+      </picture>
+    </figure>
+  {% endif %}
+
+  {% if ratio == 'portrait' %}
+    {% set width = {
+      s: img.sizes.portrait_s.width,
+      m: img.sizes.portrait_m.width,
+      l: img.sizes.portrait_l.width ? : img.width,
+    } %}
+
+    {% set width_dark = {
+      s: img_dark.sizes.portrait_s.width,
+      m: img_dark.sizes.portrait_m.width,
+      l: img_dark.sizes.portrait_l.width ? : img_dark.width,
+    } %}
+
+    <figure class="Image -ratio:portrait {{ classes }}">
+      {% if img_dark %}
+        <source
+          media="(prefers-color-scheme: dark)"
+          srcset="
+            {{ img_dark.src('portrait_s') }} {{ width_dark.s ? width_dark.s ~ 'w' }},
+            {{ img_dark.src('portrait_m') }} {{ width_dark.m ? width_dark.m ~ 'w' }},
+            {{ img_dark.src('portrait_l') }} {{ width_dark.l ? width_dark.l ~ 'w' }}
+          "
+        />
+      {% endif %}
+      <img
+        alt="{{ alt }}"
+        src="{{ img.src('portrait_s') }}"
+        srcset="
+          {{ img.src('portrait_s') }} {{ width.s ? width.s ~ 'w' }},
+          {{ img.src('portrait_m') }} {{ width.m ? width.m ~ 'w' }},
+          {{ img.src('portrait_l') }} {{ width.l ? width.l ~ 'w' }}
+        "
+        {{ attrs }}
+      />
+    </figure>
+  {% endif %}
+{% endif %}

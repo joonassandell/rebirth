@@ -1,0 +1,8 @@
+{% if text %}
+  {% set size = size == 'large' ? '-size:l' %}
+  {% set tag = tag ? : 'div' %}
+
+  <{{ tag }} class="Content {{ size }} {{ class }}" {{ attrs }}>
+    {{ text }}
+  </{{ tag }}>
+{% endif %}

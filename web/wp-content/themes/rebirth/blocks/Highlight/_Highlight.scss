@@ -1,0 +1,46 @@
+@use '../../assets/mixins' as *;
+
+.block-Highlight {
+  background: var(--surface-0);
+  border: var(--border-width) solid var(--surface-0-border);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  margin: var(--space-m) 0;
+  padding: var(--space);
+
+  @include mq(s) {
+    padding: var(--space-m);
+  }
+
+  @include mq(m) {
+    gap: var(--space);
+
+    &:has(.block-Highlight-figure) {
+      flex-direction: row;
+    }
+  }
+}
+
+.block-Highlight-content {
+  @include mq(m) {
+    display: flex;
+    flex-basis: 66.666%;
+    flex-direction: column;
+
+    .Button {
+      align-self: start;
+      margin-top: auto;
+    }
+  }
+}
+
+.block-Highlight-figure {
+  order: -1;
+
+  @include mq(m) {
+    flex-basis: 33.333%;
+    order: unset;
+  }
+}

@@ -1,0 +1,51 @@
+@use '../../mixins' as *;
+
+.hidden {
+  display: none !important;
+}
+
+@include mq($until: s) {
+  .visible\@s {
+    display: none !important;
+  }
+}
+
+@include mq(s) {
+  .hidden\@s {
+    display: none !important;
+  }
+}
+
+@include mq($until: l) {
+  .visible\@l {
+    display: none !important;
+  }
+}
+
+@include mq(l) {
+  .hidden\@l {
+    display: none !important;
+  }
+}
+
+@include theme('dark') {
+  .hidden\@theme\:dark {
+    display: none !important;
+  }
+}
+
+@include theme('light') {
+  .hidden\@theme\:light {
+    display: none !important;
+  }
+}
+
+.hideVisually {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

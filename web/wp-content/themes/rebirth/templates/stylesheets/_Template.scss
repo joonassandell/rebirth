@@ -1,0 +1,41 @@
+@use '../../assets/mixins' as *;
+
+.Template {
+  position: relative;
+  z-index: 0;
+}
+
+.Template-hero {
+  padding-top: var(--section-space);
+}
+
+.Template-hero-main {
+  > *:last-child:not(:only-child) {
+    margin-bottom: 0;
+  }
+}
+
+.Template-hero-figure {
+  margin-top: var(--space-l);
+}
+
+.Template-content {
+  --Content-maxWidth: calc(var(--space) * 40);
+}
+
+.Template-hero--default {
+  @include mq(l) {
+    align-items: flex-start;
+    display: flex;
+    gap: var(--space-3xl);
+
+    .Template-hero-main {
+      padding-right: 0;
+    }
+
+    .Template-hero-figure {
+      margin-top: 0;
+      padding-left: 0;
+    }
+  }
+}

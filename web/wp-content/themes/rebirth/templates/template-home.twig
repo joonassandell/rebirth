@@ -1,0 +1,10 @@
+{% extends "App.twig" %}
+
+{% set template_class = "Template--home" %}
+
+{% block content %}
+  {% include "templates/partials/hero.twig" %}
+  {% for component in post.meta("components") %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+{% endblock %}

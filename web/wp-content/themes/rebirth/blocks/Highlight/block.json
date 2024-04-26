@@ -1,0 +1,15 @@
+{
+  "name": "acf/highlight",
+  "title": "Highlight",
+  "description": "A custom highlight box.",
+  "category": "formatting",
+  "icon": "megaphone",
+  "keywords": ["highlight", "callout"],
+  "acf": {
+      "mode": "edit",
+      "renderCallback": "acf_block_highlight"
+  },
+  "supports": {
+    "mode": false
+  }
+}

@@ -1,0 +1,25 @@
+{% if button.title %}
+  {% if button_variant == 'default' or not button_variant %}
+    {% set button_variant = 'default' %}
+  {% endif %}
+
+  {% set link = button.url %}
+  {% set text = button.title %}
+  {% set target = button.target %}
+  {% set tag = link ? 'a' : 'button' %}
+
+  <{{ tag }} {{ link ? "href=\"#{link}\"" }}
+    class="Button Button--{{ button_variant }} {{ class }}"
+    {{ target ? "target=\"#{target}\"" }} {{ attrs }}>
+    {% if text %}
+      <span class="Button-text">
+        {{ text }}
+      </span>
+    {% endif %}
+    {% if icon %}
+      <span class="Button-icon">
+        {% include 'Icon.twig' with { icon } only %}
+      </span>
+    {% endif %}
+  </{{ tag }}>
+{% endif %}

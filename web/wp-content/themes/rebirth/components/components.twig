@@ -1,0 +1,20 @@
+{#
+ # Components
+ #}
+{% if component.acf_fc_layout == "articles_layout" %}
+  {% include "Articles.twig" with component only %}
+{% endif %}
+
+{#
+ # Modules
+ #}
+{% if component.acf_fc_layout == "module_layout" %}
+  {% set component = Post(component.module) %}
+
+  {% if component.meta("articles_main") or component.meta("articles_category") %}
+    {% include "Articles.twig" with {
+      articles_category: component.meta('articles_category'),
+      articles_main: component.meta('articles_main'),
+    } only %}
+  {% endif %}
+{% endif %}

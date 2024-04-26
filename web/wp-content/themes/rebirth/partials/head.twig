@@ -1,0 +1,14 @@
+<!doctype html>
+<html class="no-js" {{ function('language_attributes') }}>
+  <head>
+    <meta charset="{{ site.charset }}">
+    <title>{{ function('wp_title', '') }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="{{ theme.link }}/favicon.ico" sizes="any" />
+    <link rel="icon" href="{{ theme.link }}/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ theme.link }}/apple-touch-icon.png">
+
+    {{ function('wp_head') }}
+
+    {% include "analytics.twig" %}

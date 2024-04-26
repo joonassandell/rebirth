@@ -1,0 +1,21 @@
+{% extends "App.twig" %}
+
+{% set template_class = "Template--category" %}
+
+{% block content %}
+  {% include "Articles.twig" with {
+    articles: posts,
+    articles_main: {
+      main_heading: {
+        text: category_fields.category_main_heading ? : heading,
+      },
+    },
+    class: 'Template-articles'
+  } only %}
+  {% for component in category_fields.components %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+  {% for component in options.posts_category_components.components %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+{% endblock %}

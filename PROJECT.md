@@ -15,7 +15,7 @@
 **1. Clone this repository**
 
 ```
-$ git clone git@bitbucket.org:{{author}}/{{name}}.git && cd {{name}}
+$ git clone {{git-ssh}} && cd {{name}}
 ```
 
 **2. Prepare for installation**
