@@ -8,9 +8,13 @@ Deprecated the rebirth-ui and converted the entire project to a single WordPress
 
 - Add [correct way of installing acf with composer](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer)
 - Updated all essential dependencies
-- Removed WPML and added Polylang
-- Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder
+  - Removed WPML and added Polylang with acf-options-for-polylang
+  - Removed imagify and added resmushit
+  - Added `roots/bedrock-autoloader` to automatically load possible mu-plugins and changed the mu-plugins uploading script logic by uploading the entire folder
+  - Removed Contact form 7 and breadcrumb-navxt
 - Change MySQL and WordPress envs (except `DEVELOPMENT_URL`) to static ones in `docker-compose.yml` and `wp-config.example.php`. These have never been changed when using this boilerplate and they create unnecessary complexity with the scripts.
+- Removed quite much unnecessary `{{human-name}}` variable, use {{name}} instead
+- Fix wrongly applied `{{production-url}}` strings
 - Remove root scripts that affected theme, since the node versions might differ
 - Allow the usage of .env.local in remote commands
 - Use the official `WP_ENVIRONMENT_TYPE` instead of the custom `WORDPRESS_ENV`
