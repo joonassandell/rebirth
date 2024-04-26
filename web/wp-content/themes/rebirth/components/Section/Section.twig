@@ -1,0 +1,39 @@
+
+{% set buttons_position = buttons_position ? : 'before_content' %}
+{% set heading = main.main_heading ? : {} %}
+{% set content = main.main_content ? : {} %}
+{% set subtitle = main.main_subtitle ? : {} %}
+{% set buttons = main.main_buttons ? : {} %}
+{% set id = main.main_id %}
+
+<section class="Section {{ class }}" id="{{ fn('sanitize_title', id ? : heading.text ? heading.text ) }}" {{ attrs }}>
+  {% block content_before_wrap %}{% endblock %}
+
+  <div class="Section-wrap wrap">
+    {% include "Heading.twig" with heading|merge({
+      class: 'Section-heading',
+    }) only %}
+    {% include "Content.twig" with content|merge({
+      class: 'Section-content',
+      size: 'xLarge'
+    }) only %}
+    {% if buttons_position == 'before_content' %}
+      {% include "Buttons.twig" with buttons|merge({
+        class: 'Section-buttons',
+      }) only %}
+    {% endif %}
+    {% block content %}{% endblock %}
+  </div>
+
+  {% if buttons_position == 'after_content' %}
+    {% if buttons %}
+      <div class="wrap">
+        {% include "Buttons.twig" with buttons|merge({
+          class: 'Section-buttons',
+        }) only %}
+      </div>
+    {% endif %}
+  {% endif %}
+
+  {% block content_after_wrap %}{% endblock %}
+</section>

@@ -1,0 +1,11 @@
+{% if buttons %}
+  <div class="Buttons {{ class }}" {{ attrs }}>
+    {% for button in buttons %}
+      {% include "Button.twig" with {
+        button: button.button,
+        button_variant: button.button_variant,
+        icon: button.icon,
+      } only %}
+    {% endfor %}
+  </div>
+{% endif %}

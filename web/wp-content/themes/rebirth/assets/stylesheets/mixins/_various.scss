@@ -1,0 +1,102 @@
+//
+// Hover media query
+//
+@mixin mqHover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+//
+// Touch media query (no hover)
+//
+@mixin mqTouch {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
+
+//
+// On :hover if hover supported
+//
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+//
+// On :focus
+//
+@mixin focus() {
+  &:focus {
+    @content;
+  }
+}
+
+//
+// On :focus-visible
+//
+@mixin focusVisible() {
+  &:focus-visible {
+    @content;
+  }
+}
+
+//
+// On :hover if hover is supported and on :focus-visible
+//
+@mixin hoverFocusVisible() {
+  @include focusVisible() {
+    @content;
+  }
+
+  @include hover() {
+    @content;
+  }
+}
+
+//
+// On :hover if hover is supported and on :focus
+//
+@mixin hoverFocus() {
+  @include focus() {
+    @content;
+  }
+
+  @include hover() {
+    @content;
+  }
+}
+
+//
+// Detect iOS
+//
+@mixin iOS {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}
+
+//
+// Detect Safari (mobile and desktop)
+//
+@mixin safari {
+  // prettier-ignore
+  @supports (background: -webkit-named-image(i)) {
+    @content;
+  }
+}
+
+//
+// Clear fix
+//
+@mixin clearFix() {
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}

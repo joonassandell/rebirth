@@ -1,0 +1,9 @@
+@use '../../mixins' as *;
+
+.textTruncate {
+  @include textTruncate($important: true);
+}
+
+.textTruncateClamp {
+  @include textTruncateClamp($important: true);
+}

@@ -1,0 +1,20 @@
+{% extends "App.twig" %}
+
+{% set template_class = "Template--page" %}
+
+{% block content %}
+  {% include "templates/partials/hero.twig" %}
+  {% if post.content %}
+    <div class="Template-main">
+      <div class="wrap">
+        {% include "Content.twig" with {
+          class: 'Template-content',
+          text: post.content,
+        } %}
+      </div>
+    </div>
+  {% endif %}
+  {% for component in post.meta("components") %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+{% endblock %}

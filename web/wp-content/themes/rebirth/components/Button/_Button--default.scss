@@ -1,0 +1,12 @@
+@use '../../assets/mixins' as *;
+
+.Button--default {
+  background: var(--surface-0);
+  border: var(--border-width) solid var(--surface-0-border);
+  color: var(--text-strong);
+
+  @include hoverFocusVisible() {
+    background: var(--surface-0-hover);
+    border-color: var(--surface-0-border-hover);
+  }
+}

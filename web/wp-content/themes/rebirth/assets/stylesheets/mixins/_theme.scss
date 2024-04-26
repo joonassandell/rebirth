@@ -1,0 +1,92 @@
+@use '../../config';
+@use 'sass:selector';
+
+@mixin theme($mode: 'dark', $root: false, $append: false) {
+  $system-dark: $mode == 'dark' and config.$theme-mode == 'system';
+  $theme-class: config.$theme-mode == 'class' or not config.$theme-mode;
+  $theme-dark: config.$theme-mode == 'dark';
+  $theme-light: config.$theme-mode == 'light';
+
+  @if not $root {
+    @if $mode == 'light' {
+      @if $theme-class {
+        @include appendOrNest('.theme\\:light', $append) {
+          @content;
+        }
+      } @else if $theme-light {
+        @include appendOrNest(':root', $append) {
+          @content;
+        }
+      }
+    }
+
+    @if $mode == 'dark' {
+      @if $theme-class {
+        @include appendOrNest('.theme\\:dark', $append) {
+          @content;
+        }
+      } @else if $system-dark {
+        @media (prefers-color-scheme: dark) {
+          @include appendOrNest(':root', $append) {
+            @content;
+          }
+        }
+      } @else if $theme-dark {
+        @include appendOrNest(':root', $append) {
+          @content;
+        }
+      }
+    }
+  }
+
+  @if $root {
+    @if $mode == 'light' {
+      @if $theme-class {
+        @at-root :root,
+          .theme\:light {
+          @content;
+        }
+      } @else {
+        @at-root :root {
+          @content;
+        }
+      }
+    }
+
+    @if $mode == 'dark' {
+      @if $theme-class {
+        @at-root .theme\:dark {
+          @content;
+        }
+      } @else if $system-dark {
+        @media (prefers-color-scheme: dark) {
+          @at-root :root {
+            @content;
+          }
+        }
+      } @else if $theme-dark {
+        @at-root :root {
+          @content;
+        }
+      }
+    }
+  }
+}
+
+@mixin appendOrNest($themeSelector, $append) {
+  @if $append {
+    @at-root #{selector.append(&, $themeSelector)} {
+      @content;
+    }
+  } @else {
+    $rootOrNest: if(
+      & == null,
+      #{$themeSelector},
+      selector.nest($themeSelector, &)
+    );
+
+    @at-root #{$rootOrNest} {
+      @content;
+    }
+  }
+}

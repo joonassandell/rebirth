@@ -1,0 +1,10 @@
+@use '../../assets/mixins' as *;
+
+.Button--primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+
+  @include hoverFocusVisible() {
+    background: var(--primary-hover);
+  }
+}

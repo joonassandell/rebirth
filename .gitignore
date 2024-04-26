@@ -21,6 +21,8 @@ Thumbs.db
 docker-compose.override.yml
 
 node_modules
+dist
+vendor
 
 web/.htaccess_lscache*
 web/auth.json

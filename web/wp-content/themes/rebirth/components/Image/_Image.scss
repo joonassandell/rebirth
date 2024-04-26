@@ -1,0 +1,51 @@
+@use '../../assets/mixins' as *;
+
+.Image {
+  height: fit-content;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+
+  img {
+    aspect-ratio: var(--Image-ratio, initial);
+    display: block;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &.-ratio\:landscape {
+    --Image-ratio: 21/9;
+
+    @include mq($until: m) {
+      --Image-ratio: 16/9;
+    }
+  }
+
+  &.-ratio\:landscape\:16\:9 {
+    --Image-ratio: 16/9;
+  }
+
+  &.-ratio\:square {
+    --Image-ratio: 1/1;
+  }
+
+  &.-ratio\:monitor {
+    --Image-ratio: 4/3;
+  }
+
+  &.-ratio\:portrait {
+    --Image-ratio: 3/4;
+  }
+
+  &.-border\:radius {
+    img {
+      border-radius: var(--border-radius);
+    }
+  }
+
+  &.-border\:radius\:full {
+    img {
+      border-radius: var(--border-radius-full);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{% set articles = articles is defined ? articles : get_posts({
+  posts_per_page: 3,
+  category: articles_category,
+}) %}
+
+{% if articles|length > 0 and articles.0 %}
+  {% embed "Section.twig" with {
+    buttons_position: 'after_content',
+    class: 'Articles ' ~ class,
+    main: articles_main,
+  } %}
+    {% block content %}
+      <div class="Articles-articles grid">
+        {% for article in articles %}
+          <div class="grid-col grid-col6@m grid-col4@l">
+            {% include 'Article.twig' with {
+              heading: article.title,
+              img: article.thumbnail,
+              link: article.link,
+              meta: article.category ~ ' — ' ~ article.date,
+              excerpt: article.post_content,
+            } only %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endblock %}
+  {% endembed %}
+{% endif %}
+

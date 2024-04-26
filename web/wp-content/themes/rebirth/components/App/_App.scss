@@ -1,0 +1,6 @@
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  isolation: isolate;
+  min-height: 100vh;
+}

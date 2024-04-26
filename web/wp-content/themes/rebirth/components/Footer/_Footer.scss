@@ -1,0 +1,14 @@
+.Footer {
+  border-top: var(--border-width) solid var(--surface-0-border-translucent);
+  padding: var(--space) 0;
+}
+
+.Footer-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer-lang-ul {
+  display: flex;
+  gap: var(--space-xs);
+}

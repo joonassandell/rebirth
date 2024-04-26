@@ -1,0 +1,73 @@
+@use '../../assets/mixins' as *;
+
+.Header {
+  height: var(--Header-height);
+  position: relative;
+  z-index: 1;
+}
+
+.Header-inner {
+  backdrop-filter: blur(10px);
+  background-color: hsl(var(--color-50-hsl) / 0.7);
+  border-bottom: var(--border-width) solid var(--surface-0-border-translucent);
+  height: var(--Header-height);
+  inset: 0;
+  padding-bottom: var(--space);
+  padding-top: var(--space);
+  position: fixed;
+}
+
+.Header-wrap {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.Header-logo {
+  color: var(--text-strong);
+  font-weight: var(--font-weight-strong);
+  width: var(--space-m);
+}
+
+.Header-nav {
+  flex: 1;
+  position: relative;
+}
+
+.Header-nav-ul {
+  display: flex;
+  gap: var(--space-s);
+  inset: 0 0 auto 0;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--space-s),
+    #000 calc(100% - var(--space)),
+    transparent
+  );
+  padding: 0 var(--space-m) 0 var(--space-s);
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+
+  @include mq($until: m) {
+    font-size: var(--font-size-s);
+    gap: var(--space-xs);
+  }
+}
+
+.Header-nav-link {
+  color: var(--text-neutral);
+
+  @include hoverFocus() {
+    color: var(--text-strong);
+  }
+}
+
+.Header-themeSwitcher {
+  bottom: var(--space-3xs);
+  height: var(--space-ml);
+  min-height: unset;
+  padding: 0;
+  width: var(--space-ml);
+}

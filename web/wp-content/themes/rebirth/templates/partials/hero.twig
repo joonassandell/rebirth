@@ -1,0 +1,33 @@
+{% set hero_main = post.meta('tpl_hero_main') %}
+{% set heading =
+  heading ? { text: heading } :
+  hero_main.text ? { text: hero_main.text } :
+  post.title ? { text: post.title } : {}
+%}
+{% set content = content ? : hero_main.main_content ? : {} %}
+{% set buttons = buttons ? : hero_main.main_buttons ? : {} %}
+
+<header class="Template-hero Template-hero--default">
+  <div class="Template-hero-main wrap">
+    {% block content_before_main %}{% endblock %}
+    {% include "Heading.twig" with heading|merge({
+      size: 'h1',
+      tag: 'h1',
+    }) only %}
+    {% include "Content.twig" with content|merge({
+      class: 'Template-hero-content',
+      size: 'large',
+    }) only %}
+    {% include "Buttons.twig" with buttons only %}
+  </div>
+  {% if post.thumbnail %}
+    <div class="Template-hero-figure wrap">
+      {% include "Image.twig" with {
+        fetch_priority: 'high',
+        image_img: post.thumbnail,
+        loading: 'eager',
+        ratio: 'landscape',
+      } only %}
+    </div>
+  {% endif %}
+</header>

@@ -1,0 +1,67 @@
+{
+    "key": "group_6408d6012351d",
+    "title": "Category",
+    "fields": [
+        {
+            "key": "field_6408d602176b1",
+            "label": "Category Heading",
+            "name": "category_main_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Add custom heading visible in each category page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6422ad825d888",
+            "label": "Category Components",
+            "name": "category_components",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Components or modules in single category page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5efc7e2ed91b3"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "category"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Category",
+    "show_in_rest": 0,
+    "modified": 1714125735
+}

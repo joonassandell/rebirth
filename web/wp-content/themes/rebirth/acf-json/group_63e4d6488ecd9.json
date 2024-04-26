@@ -1,0 +1,52 @@
+{
+    "key": "group_63e4d6488ecd9",
+    "title": "Icon",
+    "fields": [
+        {
+            "key": "field_63e4d6493c1ab",
+            "label": "Icon",
+            "name": "icon",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Choose icon",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrowRight": "Arrow right",
+                "moon": "Moon",
+                "sun": "Sun"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "audio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Component",
+    "show_in_rest": 0,
+    "modified": 1714122801
+}

@@ -1,0 +1,31 @@
+{% set context = fn('Timber::get_context') %}
+{% set button = fields.block_highlight_button.button %}
+{% set heading = fields.block_highlight_heading %}
+{% set text = fields.block_highlight_text %}
+{% set img = fields.block_highlight_img %}
+
+<div class="block-Highlight">
+  <div class="block-Highlight-content">
+    {% if heading %}
+      {% include "Heading.twig" with {
+        size: 'h3',
+        tag: 'h2',
+        text: heading
+      } only %}
+    {% endif %}
+    {% if text %}
+      {{ text }}
+    {% endif %}
+    {% if button.title and button.url %}
+      {% include "Button.twig" with { button, button_variant: 'primary' } only %}
+    {% endif %}
+  </div>
+  {% if img.image_img %}
+    {% include "Image.twig" with img|merge({
+      border_radius: true,
+      class: 'block-Highlight-figure',
+      ratio: 'monitor',
+      sizes: "(max-width: #{context.bp_m_max}px) 100vw, 33vw"
+    }) only %}
+  {% endif %}
+</div>

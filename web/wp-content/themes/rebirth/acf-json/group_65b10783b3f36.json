@@ -1,0 +1,115 @@
+{
+    "key": "group_65b10783b3f36",
+    "title": "Gutenberg Block: Highlight",
+    "fields": [
+        {
+            "key": "field_65b22371eacbb",
+            "label": "Heading",
+            "name": "block_highlight_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65b1078446a8b",
+            "label": "Text",
+            "name": "block_highlight_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 0,
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "simple",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_65b22174eacb9",
+            "label": "Button",
+            "name": "block_highlight_button",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_63e4d1a893319"
+            ],
+            "display": "group",
+            "layout": "table",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_65b2229beacba",
+            "label": "Image",
+            "name": "block_highlight_img",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_641049f29c953"
+            ],
+            "display": "group",
+            "layout": "row",
+            "prefix_label": 0,
+            "prefix_name": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/highlight"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Gutenberg Block",
+    "show_in_rest": 0,
+    "show_in_graphql": 0,
+    "graphql_field_name": "",
+    "map_graphql_types_from_location_rules": 0,
+    "graphql_types": "",
+    "modified": 1706184947
+}

@@ -1,0 +1,48 @@
+{% extends "App.twig" %}
+
+{% set template_class = 'Template--single' %}
+{% set page_for_posts = fn('get_page', fn('get_option', 'page_for_posts')) %}
+
+{% block content %}
+  {% include "templates/partials/hero-single.twig" %}
+  {% if post.content %}
+    <div class="Template-main">
+      <div class="wrap">
+        {% include "Content.twig" with {
+          class: 'Template-content',
+          text: post.content,
+        } %}
+      </div>
+    </div>
+  {% endif %}
+  {% for component in post.meta("components") %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+  {% include "Articles.twig" with {
+    articles_main: {
+      main_heading: {
+        text: options.posts_related_articles.heading_text,
+      },
+      main_subtitle: {
+        text: options.posts_related_articles.subtitle_text,
+      },
+      main_buttons: {
+        buttons: [{
+          icon: 'arrowRight',
+          button: {
+            title: page_for_posts.post_title,
+            url: fn('get_page_link', page_for_posts.ID),
+          },
+        }]
+      }
+    },
+    articles: get_posts({
+      category: fn('wp_get_post_categories', post.ID),
+      post__not_in: [post.ID],
+      posts_per_page: 3,
+    }),
+  } only %}
+  {% for component in options.posts_posts_components.components %}
+    {% include "components.twig" with { component } %}
+  {% endfor %}
+{% endblock %}

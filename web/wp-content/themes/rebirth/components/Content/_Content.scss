@@ -1,0 +1,100 @@
+@use '../../assets/mixins' as *;
+
+.Content {
+  @include clearFix();
+  margin-bottom: var(--space-m);
+  max-width: var(--Content-maxWidth, calc(var(--space) * 40));
+
+  &.-size\:l {
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
+  }
+}
+
+/* ======
+ * Gutenberg content
+ * ====== */
+
+.Content {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:not(:first-child) {
+      margin-top: var(--space-xl);
+    }
+
+    strong {
+      font-weight: var(--font-weight-heading);
+    }
+  }
+
+  .has-small-font-size {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+  }
+
+  .has-medium-font-size,
+  .has-huge-font-size,
+  .has-large-font-size {
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
+  }
+
+  p:empty {
+    display: none;
+  }
+
+  a:not([class]) {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /**
+   * Images
+   */
+  .wp-block-image {
+    img {
+      border-radius: var(--border-radius);
+      height: auto !important;
+      min-width: 100% !important;
+    }
+  }
+
+  /**
+   * Alignment, mainly for images
+   */
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .alignleft {
+    @include mq(m) {
+      float: left;
+      margin: 0 var(--space-l) var(--space-ml) 0;
+    }
+  }
+
+  .alignright {
+    @include mq(m) {
+      float: right;
+      margin: 0 0 var(--space-ml) var(--space-l);
+    }
+  }
+}

@@ -65,6 +65,10 @@ plan.local(['start'], local => {
       cp web/auth.example.json web/auth.json
     fi
 
+    if [ ! -d "web/wp-content/themes/{{theme-dir}}" ]; then
+      mv web/wp-content/themes/rebirth web/wp-content/themes/{{theme-dir}}
+    fi
+
     docker-compose up -d
 
     (cd web && composer update)

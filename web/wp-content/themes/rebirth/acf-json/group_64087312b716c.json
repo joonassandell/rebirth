@@ -1,0 +1,126 @@
+{
+    "key": "group_64087312b716c",
+    "title": "Posts Settings",
+    "fields": [
+        {
+            "key": "field_64229ed55cc33",
+            "label": "Note",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Always apply these fields and settings to each translation by selecting some language from the top bar.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_6422c8136ba41",
+            "label": "Related Articles Settings",
+            "name": "posts_related_articles",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Latest article settings visible in posts-like templates.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6422c8206ba43",
+                    "label": "Heading text",
+                    "name": "heading_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "show_in_graphql": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_64229cb6c495e",
+            "label": "Category Components",
+            "name": "posts_category_components",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Components shared in all category pages. You can also add components per single category from category editing page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5efc7e2ed91b3"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_6422de04c928a",
+            "label": "Posts Components",
+            "name": "posts_posts_components",
+            "aria-label": "",
+            "type": "clone",
+            "instructions": "Components shared in every post page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5efc7e2ed91b3"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "posts-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Posts, Categories etc.",
+    "show_in_rest": 0,
+    "modified": 1714125109
+}

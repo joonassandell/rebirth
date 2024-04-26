@@ -1,0 +1,27 @@
+<header class="Header">
+  <div class="Header-inner">
+    <div class="Header-wrap wrap">
+      <a class="Header-logo" href="{{ languages.home_url }}">
+        <span class="hideVisually">{{ site.title }}</span>
+        {% include "Logo.twig" with { logo: 'logomark' } only %}
+      </a>
+      <nav class="Header-nav">
+        <ul class="Header-nav-ul scrollbar">
+          {% for item in nav_header.items %}
+            <li class="Header-nav-item {{ item.current ? 'is-active' }}">
+              <a href="{{ item.link }}" class="Header-nav-link">
+                {{ item.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <button class="Header-themeSwitcher Button Button--default">
+        <span class="Button-icon">
+          {% include "Icon.twig" with { icon: 'sun', size: 'small', class: 'hidden@theme:light' } only %}
+          {% include "Icon.twig" with { icon: 'moon', size: 'small', class: 'hidden@theme:dark' } only %}
+        </span>
+      </button>
+    </div>
+  </div>
+</header>

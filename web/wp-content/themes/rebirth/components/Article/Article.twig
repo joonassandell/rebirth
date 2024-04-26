@@ -1,0 +1,28 @@
+{% set context = fn('Timber::get_context') %}
+
+<article class="Article">
+  <a aria-label="{{ heading }}" class="Article-link" href="{{ link }}"></a>
+  {% include "Image.twig" with {
+    class: 'Article-figure',
+    image_img: img,
+    ratio: 'landscape_16_9',
+    sizes: img_sizes ? : "(max-width: #{context.bp_m_max}px) 100vw, 50vw"
+  } %}
+  <div class="Article-content">
+    {% if meta %}
+      <div class="Article-meta">
+        {{ meta }}
+      </div>
+    {% endif %}
+    {% include "Heading.twig" with {
+      class: 'Article-heading textTruncateClamp',
+      text: heading,
+      tag: 'h3',
+    } only %}
+    {% if excerpt %}
+      <div class="Article-excerpt">
+        {{ excerpt|truncate(20) }}
+      </div>
+    {% endif %}
+  </div>
+</article>

@@ -1,0 +1,31 @@
+// ======
+// Truncate text
+// ======
+//
+// Force overly long spans of text to truncate to a single line
+
+@mixin textTruncate($max-width: 100%, $important: null) {
+  $important: if($important, !important, null);
+  max-width: var(--textTruncate-maxWidth, #{$max-width}) $important;
+  overflow: hidden $important;
+  text-overflow: ellipsis $important;
+  white-space: nowrap $important;
+}
+
+// ======
+// Truncate text with multiple lines
+// ======
+//
+// Works for multiple spans of text without having to apply maximum width.
+// However do not use this if you need to get dimensions from the element your
+// applying this to. Note that this cuts spans of text by words, so it may not
+// be ideal for every situation.
+
+@mixin textTruncateClamp($clamp: 1, $orient: vertical, $important: null) {
+  $important: if($important, !important, null);
+  -webkit-box-orient: $orient $important;
+  display: -webkit-box $important;
+  -webkit-line-clamp: var(--textTruncateClamp, #{$clamp}) $important;
+  overflow: hidden $important;
+  overflow-wrap: anywhere $important;
+}

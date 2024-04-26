@@ -1,0 +1,32 @@
+.Button {
+  align-items: center;
+  border-radius: var(--border-radius);
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight-500);
+  gap: var(--space-xs);
+  justify-content: center;
+  line-height: var(--line-height);
+  min-height: var(--space-xl);
+  padding: var(--space-2xs) var(--space);
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background-color var(--trans-duration),
+    border-color var(--trans-duration),
+    box-shadow var(--trans-duration),
+    opacity var(--trans-duration),
+    color var(--trans-duration);
+  transition-timing-function: var(--ease-in-out);
+
+  &:active {
+    transform: translateY(var(--space-4xs));
+  }
+}
+
+.Button-icon {
+  display: flex;
+  margin: 0 calc(var(--space-2xs) * -1);
+}
