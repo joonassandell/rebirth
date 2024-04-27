@@ -18,13 +18,21 @@
     } only %}
     <div class="Template-meta">
       <div class="Template-author">
-        {% include "Image.twig" with {
-          border_radius: 'full',
-          class: 'Template-hero-author-image',
-          image_img: post.author.meta('profile_picture_custom') ? : post.author.avatar.abs_url,
-          ratio: 'square',
-          sizes: img_sizes.square_xs.width ~ 'px',
-        } only %}
+        {% if post.author.meta('profile_picture_custom') %}
+          {% include "Image.twig" with {
+            border_radius: 'full',
+            class: 'Template-hero-author-image',
+            image_img: post.author.meta('profile_picture_custom'),
+            ratio: 'square',
+            sizes: img_sizes.square_xs.width ~ 'px',
+          } only %}
+        {% else %}
+          <figure class="Image -ratio:square -border:radius:full Template-hero-author-image">
+            <picture>
+              <img src="{{ post.author.avatar.abs_url }}}" />
+            </picture>
+          </figure>
+        {% endif %}
         <div class="Template-author-name">
           {{ author_name }}
         </div>
