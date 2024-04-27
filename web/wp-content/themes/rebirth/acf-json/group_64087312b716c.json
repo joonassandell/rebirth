@@ -26,7 +26,7 @@
             "name": "posts_related_articles",
             "aria-label": "",
             "type": "group",
-            "instructions": "Latest article settings visible in posts-like templates.",
+            "instructions": "Latest article settings visible in post-like pages",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -42,7 +42,7 @@
                     "name": "heading_text",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Override the default heading text",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -50,7 +50,6 @@
                         "class": "",
                         "id": ""
                     },
-                    "show_in_graphql": 0,
                     "default_value": "",
                     "maxlength": "",
                     "placeholder": "",
@@ -87,7 +86,7 @@
             "name": "posts_posts_components",
             "aria-label": "",
             "type": "clone",
-            "instructions": "Components shared in every post page.",
+            "instructions": "Components shared in every post page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -122,5 +121,5 @@
     "active": true,
     "description": "Posts, Categories etc.",
     "show_in_rest": 0,
-    "modified": 1714125109
+    "modified": 1714228384
 }
