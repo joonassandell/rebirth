@@ -6,6 +6,6 @@
 
 {% if text %}
   <{{ tag }} class="Heading {{ classes }}" {{ attrs }}>
-    {{ text  }}
+    {{ text|striptags }}
   </{{ tag }}>
 {% endif %}
