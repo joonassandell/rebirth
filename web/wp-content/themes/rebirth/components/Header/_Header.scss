@@ -56,6 +56,12 @@
   }
 }
 
+.Header-nav-item {
+  &.is-active {
+    text-decoration: underline;
+  }
+}
+
 .Header-nav-link {
   color: var(--text-neutral);
 

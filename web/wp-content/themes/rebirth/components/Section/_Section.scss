@@ -9,7 +9,7 @@
     padding-bottom: var(--section-space);
   }
 
-  &:has(:not(.Section-content)) {
+  &:not(:has(.Section-content)) {
     .Section-heading {
       margin-bottom: var(--space-m);
     }
