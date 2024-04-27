@@ -72,6 +72,21 @@ add_action('category_add_form', function() {
 });
 
 /**
+ * By default set wysiwyg editors to take less space unless there's class
+ * of wysiwyg-l applied to the field
+ */
+add_action('acf/input/admin_head', function () {
+    echo '
+        <style type="text/css">
+            .acf-field-wysiwyg:not(.wysiwyg-l) iframe {
+                height: 104px !important;
+                min-height: 104px !important;
+            }
+        </style>
+    ';
+});
+
+/**
  * Fix a long-standing issue with ACF, where fields sometimes aren't shown
  * in previews (ie. from Preview > Open in new tab).
  * https://support.advancedcustomfields.com/forums/topic/custom-fields-on-post-preview/
