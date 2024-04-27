@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Rebirth\n"
-"POT-Creation-Date: 2024-04-26 14:19+0300\n"
-"PO-Revision-Date: 2024-04-26 14:22+0300\n"
+"POT-Creation-Date: 2024-04-27 17:28+0300\n"
+"PO-Revision-Date: 2024-04-27 17:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fi\n"
@@ -39,6 +39,10 @@ msgstr ""
 msgid "Go to homepage"
 msgstr "Siirry etusivulle"
 
+#: templates/single.twig:24
+msgid "Related articles"
+msgstr "Aiheeseen liittyvät artikkelit"
+
 #: index.php:13 index.php:15
 msgid "Archive"
 msgstr "Arkisto"
@@ -55,59 +59,59 @@ msgstr "Yleiset asetukset"
 msgid "Posts settings"
 msgstr "Asetukset"
 
-#: lib/custom-post-types/cpt-name.php:12
+#: lib/custom-post-types/cpt-name.php:8
 msgid "Add New Post Type"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:13
+#: lib/custom-post-types/cpt-name.php:9
 msgid "Edit Post Type"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:14
+#: lib/custom-post-types/cpt-name.php:10
 msgid "Post Types"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:15 lib/custom-post-types/cpt-name.php:17
+#: lib/custom-post-types/cpt-name.php:11 lib/custom-post-types/cpt-name.php:13
 msgid "Post Type"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:16
+#: lib/custom-post-types/cpt-name.php:12
 msgid "New Post Type"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:18
+#: lib/custom-post-types/cpt-name.php:14
 msgid "View Post Type"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:19
+#: lib/custom-post-types/cpt-name.php:15
 msgid "View Post Types"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:42
+#: lib/custom-post-types/cpt-name.php:38
 msgid "Add New Taxonomy"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:43
+#: lib/custom-post-types/cpt-name.php:39
 msgid "Edit Taxonomy"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:44
+#: lib/custom-post-types/cpt-name.php:40
 msgid "Taxonomies"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:45 lib/custom-post-types/cpt-name.php:47
+#: lib/custom-post-types/cpt-name.php:41 lib/custom-post-types/cpt-name.php:43
 msgid "Taxonomy"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:46
+#: lib/custom-post-types/cpt-name.php:42
 msgid "New Taxonomy"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:48
+#: lib/custom-post-types/cpt-name.php:44
 msgid "View Taxonomy"
 msgstr ""
 
-#: lib/custom-post-types/cpt-name.php:49
+#: lib/custom-post-types/cpt-name.php:45
 msgid "View Taxonomies"
 msgstr ""
 
@@ -136,15 +140,11 @@ msgid "Component Type"
 msgstr "Komponenttityyppi"
 
 #. Theme Name of the plugin/theme
-msgid "Rebirth"
+msgid "{{theme-dir}}"
 msgstr ""
 
-#. Description of the plugin/theme
-msgid "Website for Rebirth"
-msgstr "Rebirth verkkopalvelu"
-
 #. Author of the plugin/theme
-msgid "author"
+msgid "{{author}}"
 msgstr ""
 
 #. Template Name of the plugin/theme

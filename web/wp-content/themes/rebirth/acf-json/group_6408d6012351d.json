@@ -28,7 +28,7 @@
             "name": "category_components",
             "aria-label": "",
             "type": "clone",
-            "instructions": "Components or modules in single category page.",
+            "instructions": "Components in single category page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -63,5 +63,5 @@
     "active": true,
     "description": "Category",
     "show_in_rest": 0,
-    "modified": 1714125735
+    "modified": 1714228410
 }

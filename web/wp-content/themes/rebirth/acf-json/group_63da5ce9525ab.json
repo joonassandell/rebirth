@@ -42,18 +42,17 @@
                     "name": "text",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "Bold applies highlight color and line breaks (Shift+Enter) apply line breaks",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "60",
+                        "width": "",
                         "class": "",
-                        "id": "wysiwyg-small"
+                        "id": ""
                     },
-                    "show_in_graphql": 0,
                     "default_value": "",
-                    "tabs": "visual",
-                    "toolbar": "bold",
+                    "tabs": "all",
+                    "toolbar": "simple",
                     "media_upload": 0,
                     "delay": 0
                 },
@@ -63,7 +62,7 @@
                     "name": "size",
                     "aria-label": "",
                     "type": "select",
-                    "instructions": "Change heading size, by default this is large",
+                    "instructions": "Change heading size, by default size is large",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -71,14 +70,13 @@
                         "class": "",
                         "id": ""
                     },
-                    "show_in_graphql": 0,
                     "choices": {
-                        "h1": "Extra large",
-                        "h2": "Large",
-                        "h3": "Medium",
-                        "h4": "Medium small",
-                        "h5": "Small",
-                        "h6": "Extra small"
+                        "h1": "Extra large (h1)",
+                        "h2": "Large (h2)",
+                        "h3": "Medium (h3)",
+                        "h4": "Small (h4)",
+                        "h5": "Extra Small (h5)",
+                        "h6": "Tiny (h6)"
                     },
                     "default_value": false,
                     "return_format": "value",
@@ -253,5 +251,5 @@
     "active": true,
     "description": "Component",
     "show_in_rest": 0,
-    "modified": 1714129745
+    "modified": 1714228244
 }

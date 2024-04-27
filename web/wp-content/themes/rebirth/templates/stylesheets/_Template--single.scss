@@ -1,6 +1,12 @@
+@use '../../assets/mixins' as *;
+
 .Template--single {
   .Template-hero {
     margin-bottom: var(--space-l);
+
+    @include mq(l) {
+      margin-bottom: var(--space-2xl);
+    }
   }
 
   .Template-hero-main {
@@ -18,13 +24,12 @@
 
   .Template-author {
     align-items: center;
-    color: var(--text-strong);
     display: flex;
     gap: var(--space-xs);
   }
 
   .Template-hero-author-image {
-    max-width: var(--space-m);
+    max-width: var(--space-ml);
   }
 
   .Template-hero-figure {
