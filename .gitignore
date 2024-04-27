@@ -36,7 +36,7 @@ web/.htaccess
 web/wp-config.php
 
 web/wp-content/uploads/*
-!web/wp-content/uploads/.gitkeep
+!web/wp-content/uploads/2024
 
 web/wp-content/plugins/*
 !web/wp-content/plugins/.gitkeep
