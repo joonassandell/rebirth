@@ -45,6 +45,43 @@
             "layout": "row",
             "prefix_label": 0,
             "prefix_name": 0
+        },
+        {
+            "key": "field_662ced8d9f35f",
+            "label": "Settings",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_662ced9e9f360",
+            "label": "Hide hero",
+            "name": "tpl_hero_hide",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Hide hero. This is useful if the first component needs to the first visible element.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -53,11 +90,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
-            },
-            {
-                "param": "page_template",
-                "operator": "!=",
-                "value": "default"
             }
         ]
     ],
@@ -70,5 +102,5 @@
     "active": true,
     "description": "Template (Partial)",
     "show_in_rest": 0,
-    "modified": 1714123806
+    "modified": 1714220510
 }
