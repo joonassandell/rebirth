@@ -21,10 +21,7 @@
   {% include "Articles.twig" with {
     articles_main: {
       main_heading: {
-        text: options.posts_related_articles.heading_text,
-      },
-      main_subtitle: {
-        text: options.posts_related_articles.subtitle_text,
+        text: options.posts_related_articles.heading_text ? : __('Related articles', 'app'),
       },
       main_buttons: {
         buttons: [{
