@@ -28,7 +28,6 @@ web/.htaccess_lscache*
 web/auth.json
 
 database/*
-!database/.gitkeep
 !database/wordpress.sql
 
 web/wp

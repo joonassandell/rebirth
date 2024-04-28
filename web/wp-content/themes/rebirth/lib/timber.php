@@ -79,7 +79,6 @@ class App extends TimberSite {
         $context['ENVIRONMENT'] = wp_get_environment_type();
         $context['DEVELOPMENT'] = wp_get_environment_type() == 'development';
         $context['PRODUCTION'] = wp_get_environment_type() == 'production';
-        $context['STAGING'] = wp_get_environment_type() == 'staging';
         $context['DISABLE_ANALYTICS'] = @$_ENV['DISABLE_ANALYTICS'] == 'true';
 
         return $context;
