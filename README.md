@@ -20,15 +20,14 @@ WordPress boilerplate with a set of useful development tools and an improved dir
 - [Docker](https://docs.docker.com/engine/install) & [Docker Compose](https://github.com/docker/compose)
 - [Composer](https://getcomposer.org)
 - [Node.js](http://nodejs.org/), [Npm](https://www.npmjs.com) & [Nvm](https://github.com/nvm-sh/nvm)
-- [ACF Pro](https://www.advancedcustomfields.com). ACF subscription key can be found from [advancedcustomfields.com/my-account](https://www.advancedcustomfields.com/my-account). Password can be [an existing site that is already active for the license key or your new site url](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer).
-- SSH access (RSA Key Pair) and [rsync](https://linux.die.net/man/1/rsync) for syncing assets, repositories and databases to and from remote locations
+- [ACF Pro](https://www.advancedcustomfields.com)
 
 ## Quick start (recommended)
 
 Quickly install with [create-project](https://github.com/mafintosh/create-project). Learn from the variables below and add your values to the following one-liner:
 
 ```shell
-npx create-project my-project-dir joonassandell/rebirth#main --theme-dir=my-theme-dir --author="Joonas Sandell" --production-url=https://my-project.com --acf-key="9wZ..." --acf-pw="https://registeredacfdomain.com" --git-ssh="git@github.com:username/repository.git"
+npx create-project my-project-dir joonassandell/rebirth#main --theme-dir=my-theme-dir --author="Joonas Sandell" --production-url=https://my-project.com --git-ssh="git@github.com:username/repository.git" --acf-key="9wZ..." --acf-pw="https://registeredacfdomain.com"
 ```
 
 After the installation is done jump to [step 3](#3-install-dependencies-and-boostrap) in the next section.
@@ -47,9 +46,11 @@ git clone https://github.com/joonassandell/rebirth.git my-project-dir
 - `{{theme-dir}}`: This will be your theme directory and name (e.g. `my-theme`)
 - `{{author}}`: Author of this project (e.g. `Joonas Sandell`)
 - `{{production-url}}`: Production URL url of the project (e.g. `https://project-name.com`. _Add without trailing slash_.)
+- `{{git-ssh}}`: Project's remote SSH Git URL
 - `{{acf-key}}`: ACF subscription key (e.g. `9wZ...`)
 - `{{acf-pw}}`: ACF password (e.g. `https://registeredacfdomain.com`)
-- `{{git-ssh}}`: Project's remote SSH Git URL
+
+ACF subscription key can be found from [your account](https://www.advancedcustomfields.com/my-account) and password can be [an existing site that is already active for the license key or your new site url](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer).
 
 ### 3. Install dependencies and bootstrap
 
