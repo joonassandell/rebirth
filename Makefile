@@ -86,7 +86,7 @@ bootstrap:
             '      "password": ""' \
             '    }' \
             '  }' \
-            '}' > .gitignore
+            '}' > web/auth.example.json
 
 # =======================================
 # Remote
