@@ -1,5 +1,5 @@
 # =======================================
-# Local Commands
+# Local
 # =======================================
 
 start:
@@ -41,8 +41,8 @@ db-backup:
 	npm run --silent db:backup
 
 db-clean:
-	rm -rf database/local
-	rm -rf database/remote
+	rm -r database/local
+	rm -r database/remote
 
 db-commit:
 	npm run --silent db:commit
@@ -74,12 +74,22 @@ replace-special-characters:
 		wp search-replace 'Ã¶' 'ö' --allow-root"
 
 bootstrap:
-	rm -rf README.md
-	rm -rf CHANGELOG.md
+	rm README.md
+	rm CHANGELOG.md
+	rm LICENSE
 	mv PROJECT.md README.md
+	@printf '%s\n' \
+            '{' \
+            '  "http-basic": {' \
+            '    "connect.advancedcustomfields.com": {' \
+            '      "username": "",' \
+            '      "password": ""' \
+            '    }' \
+            '  }' \
+            '}' > .gitignore
 
 # =======================================
-# Remote Commands
+# Remote
 # =======================================
 
 production-start:

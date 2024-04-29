@@ -8,7 +8,7 @@ WordPress boilerplate with a set of useful development tools and an improved dir
 
 - Docker container to spin up local development environment with prereconfigured database
 - Dependency management with [Composer](https://getcomposer.org)
-- Theme boilerplate with [Vite](https://vitejs.dev), [Timber](https://upstatement.com/timber) and [shipit](https://github.com/shipitjs/shipit)
+- Theme boilerplate with [Vite](https://vitejs.dev), [Timber](https://upstatement.com/timber) and [Shipit](https://github.com/shipitjs/shipit)
 - Configuration with environment specific files
 - Useful plugins out of the box
 - WordPress installation to remote locations
@@ -30,7 +30,7 @@ Quickly install with [create-project](https://github.com/mafintosh/create-projec
 npx create-project my-project-dir joonassandell/rebirth#main --theme-dir=my-theme-dir --author="Joonas Sandell" --production-url=https://my-project.com --git-ssh="git@github.com:username/repository.git" --acf-key="9wZ..." --acf-pw="https://registeredacfdomain.com"
 ```
 
-After the installation is done jump to [step 3](#3-install-dependencies-and-boostrap) in the next section.
+After the installation is done jump to [step 3](#3-install-dependencies-and-bootstrap) in the next section.
 
 ## Getting started
 
@@ -78,7 +78,7 @@ Start you theme development with `npm run dev` and navigate to [localhost:8000](
 
 ### 7. Recommended actions
 
-Run the bootstrap script which will remove this file and rename [PROJECT.md](PROJECT.md) to [README.md](README.md). See the new README to learn about available scripts and make sure it contains correct information.
+Run the [bootstrap](Makefile) script which will remove this file and rename [PROJECT.md](PROJECT.md) to [README.md](README.md) among other actions. See the new README to learn about available scripts and make sure it contains correct information.
 
 ```
 make bootstrap
@@ -86,16 +86,17 @@ make bootstrap
 
 Other essential actions:
 
-- Change the admin credentials
-- Once you have added data to your project you should create your own MySQL dump with `make db-commit` and commit the new dump (`database/wordpress.sql`)
+- Change the WordPress admin credentials
+- Git initialise and add your first commit (e.g. `git init && git add . && git commit -m "Init"`)
+- Once you have added data to your project you should create your own MySQL dump with `make db-commit` and commit the newly created dump (`database/wordpress.sql`)
 - Keep your projects README in sync with the changes you make
-- Git initialise your project (e.g. `git init && git add . && git commit -m "Init"`)
+- Remove the `bootstrap` script from [Makefile](Makefile)
 
 Happy developing!
 
 ## Changelog
 
-See [CHANGELOG](/CHANGELOG.md).
+See [CHANGELOG](CHANGELOG.md).
 
 ## Issues & FAQ
 
@@ -103,4 +104,4 @@ See [Issues](https://github.com/joonassandell/rebirth/issues) and [FAQ](https://
 
 ## License
 
-Licensed under the [MIT license](/LICENSE.md).
+Licensed under the [MIT license](LICENSE).
