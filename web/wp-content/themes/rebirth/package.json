@@ -14,7 +14,6 @@
     "lint:fix": "npm run lint -- --fix",
     "lint": "eslint './assets/**/*.{js,jsx}' './components/**/*.{js,jsx}'",
     "preview": "PREVIEW=true vite build --watch",
-    "rollback:staging": "shipit staging rollback",
     "rollback": "shipit production rollback"
   },
   "husky": {
