@@ -1,5 +1,5 @@
 {
-  "name": "{{author}}/{{theme-dir}}",
+  "name": "{{name}}/{{theme-dir}}",
   "homepage": "{{production-url}}",
   "type": "wordpress-theme",
   "version": "1.0.0",

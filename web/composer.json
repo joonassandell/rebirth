@@ -1,5 +1,5 @@
 {
-  "name": "{{author}}/{{name}}",
+  "name": "{{name}}/{{name}}",
   "type": "project",
   "license": "MIT",
   "homepage": "{{production-url}}",
