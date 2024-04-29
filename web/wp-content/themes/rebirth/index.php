@@ -1,9 +1,4 @@
 <?php
-/**
- * Use index.php as page template and as archive page. Set some page as
- * "posts page" in wp settings for this to take action. This allows to use
- * search params maybe later as filters e.g. /archive?year=2023
- */
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts($wp_query);
 $context['post'] = new TimberPost();

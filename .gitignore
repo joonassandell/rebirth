@@ -5,6 +5,7 @@
 *.sass-cache
 *.sql
 .env.local
+.env.*.local
 ._*
 .cache
 .DS_Store

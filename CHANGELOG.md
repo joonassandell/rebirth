@@ -2,10 +2,18 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2024
+## [1.0.0] - 2024-04-29
 
-Deprecated the rebirth-ui and converted the entire project to a single WordPress boilerplate mainly for legacy reasons. Better description, instructions and theme TBA in the near future.
+Deprecated the rebirth-ui and converted the entire project to a WordPress boilerplate. See [history](https://github.com/joonassandell/rebirth/wiki/History).
 
+- Added theme boilerplate from the old rebirth-ui with major changes such as:
+  - Vite for builds and development server
+  - Dark/light mode
+  - Better directory and file structure
+  - Logic on how to use acf fields as components and as shared "modules"
+  - Few example components and blocks
+  - New template logic
+- Added preconfigured database dump
 - Updated all essential dependencies
   - Add [correct way of installing acf with composer](https://www.advancedcustomfields.com/resources/installing-acf-pro-with-composer)
   - Removed `wpml` and added `polylang` with `acf-options-for-polylang`
