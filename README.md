@@ -34,7 +34,7 @@ After the installation is done jump to [step 3](#3-install-dependencies-and-boot
 
 ## Getting started
 
-### 1. Clone and create your project directory
+### 1. Clone and create project directory
 
 ```shell
 git clone https://github.com/joonassandell/rebirth.git my-project-dir

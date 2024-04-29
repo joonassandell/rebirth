@@ -12,7 +12,7 @@ Local Docker development environment for {{name}}. Started with [rebirth](https:
 
 # Getting started
 
-## 1. Clone this repository and navigate to the directory
+## 1. Clone and navigate to the directory
 
 ```shell
 git clone {{git-ssh}} && cd {{name}}
@@ -20,8 +20,9 @@ git clone {{git-ssh}} && cd {{name}}
 
 ## 2. Install dependencies
 
-1. Copy [`.env`](.env) to `.env.local` and make sure that all the `PRODUCTION_*` vars are set
-2. Make sure your Docker is running, ports `8000` and `13306` are not in use and you're using node version `14.16.0`. Then run:
+1. Copy [auth.example.json](web/auth.example.json) to `auth.json` and add ACF Pro credentials
+2. Optionally copy [.env](.env) to `.env.local` and make sure that all the `PRODUCTION_*` vars are set
+3. Make sure your Docker is running, ports `8000` and `13306` are not in use and you're using node version `14.16.0`. Then run:
 
 ```
 make start
@@ -33,7 +34,7 @@ If you're unable to run this, please refer to the [Makefile](Makefile) and run t
 
 Login to the [WordPress Admin dashboard](http://localhost:8000/wp-admin) to see that everything works properly. Setup WordPress, activate ACF and other plugins, add ACF license key and sync theme's ACF fields if these are not already configured. Assets such as images may be broken, so if you need them you can download them with `make assets-pull`.
 
-## 4. Install theme dependencies and start the theme development
+## 4. Install theme dependencies
 
 Go to [web/wp-content/themes/{{theme-dir}}](web/wp-content/themes/{{theme-dir}}) and run:
 
