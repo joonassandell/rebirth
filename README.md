@@ -2,7 +2,7 @@
 
 # Rebirth
 
-WordPress boilerplate with a set of useful development tools and an improved directory structure. Rebirth used to be "a starting point with HTML, CSS and JavaScript recipes you can copy and paste into your apps" but has since evolved to being a WordPress boilerplate. Read mode from [history](https://github.com/joonassandell/rebirth/wiki/History).
+WordPress boilerplate with a set of useful development tools and an improved directory structure. Rebirth used to be _"a starting point with HTML, CSS and JavaScript recipes you can copy and paste into your apps"_ but has since evolved to being just a WordPress boilerplate. Read mode from [history](https://github.com/joonassandell/rebirth/wiki/History).
 
 ## Features
 
