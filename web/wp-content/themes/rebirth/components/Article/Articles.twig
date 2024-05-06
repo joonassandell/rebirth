@@ -12,7 +12,7 @@
     {% block content %}
       <div class="Articles-articles grid">
         {% for article in articles %}
-          <div class="grid-col grid-col6@m grid-col4@l">
+          <div class="grid-col grid-col:6@m grid-col:4@l">
             {% include 'Article.twig' with {
               heading: article.title,
               img: article.thumbnail,
